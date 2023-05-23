@@ -9,7 +9,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="full">
-                     <h3>Product Grid</h3>
+                     <h3 > Product Grid</h3>
                   </div>
                </div>
             </div>
@@ -63,7 +63,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p2.png" alt="">
+                        <img src="assets/images/p2.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -88,7 +88,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p3.png" alt="">
+                        <img src="assets/images/p3.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -113,7 +113,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p4.png" alt="">
+                        <img src="assets/images/p4.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -138,7 +138,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p5.png" alt="">
+                        <img src="assets/images/p5.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -163,7 +163,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p6.png" alt="">
+                        <img src="assets/images/p6.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -188,7 +188,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p7.png" alt="">
+                        <img src="assets/images/p7.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -213,7 +213,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p8.png" alt="">
+                        <img src="assets/images/p8.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -238,7 +238,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p9.png" alt="">
+                        <img src="assets/images/p9.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -263,7 +263,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p10.png" alt="">
+                        <img src="assets/images/p10.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -288,7 +288,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p11.png" alt="">
+                        <img src="assets/images/p11.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -313,7 +313,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p12.png" alt="">
+                        <img src="assets/images/p12.png" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>

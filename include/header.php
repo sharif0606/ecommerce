@@ -1,5 +1,5 @@
 <?php
-    $base_url="http://localhost/ecommerce/";
+    $base_url="http://localhost/ecommerce-2/";
     require_once('class/crud.php');
     $mysqli=new crud;
 ?>
