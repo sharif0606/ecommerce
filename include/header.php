@@ -15,7 +15,7 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="<?= $base_url ?>assets/images/favicon.png" type="">
+      <!-- <link rel="shortcut icon" href="<?= $base_url ?>assets/images/favicon.png" type=""> -->
       <title>Famms - Fashion HTML Template</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="<?= $base_url ?>assets/css/bootstrap.css" />

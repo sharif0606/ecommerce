@@ -353,7 +353,7 @@
    <div class="container">
       <div class="box">
          <div class="arrival_bg_box">
-            <img src="images/arrival-bg.png" alt="">
+            <img src="assets/images/arrival-bg.png" alt="">
          </div>
          <div class="row">
             <div class="col-md-6 ml-auto">
@@ -733,7 +733,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                           <img src="assets/images/client.jpg" alt="">
                         </div>
                      </div>
                   </div>
@@ -777,7 +777,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                           <img src="assets/images/client.jpg" alt="">
                         </div>
                      </div>
                   </div>

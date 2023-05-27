@@ -32,7 +32,7 @@
                            <a href="" class="option1">
                            Men's Shirt
                            </a>
-                           <a href="" class="option2">
+                           <a href="cart" class="option2">
                            Buy Now
                            </a>
                         </div>

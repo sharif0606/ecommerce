@@ -1,8 +1,8 @@
 <!-- header section strats -->
 <header class="header_section">
             <div class="container">
-               <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.php"><img width="250" src="assets/images/logo.png" alt="#" /></a>
+               <nav class="navbar navbar-expand-lg custom_nav-container">
+                  <a class="navbar-brand" href="index.php"><img width="60" src="assets/images/logo2.jpeg" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
