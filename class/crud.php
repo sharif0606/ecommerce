@@ -3,7 +3,7 @@
         private $host='localhost';
         private $user='root';
         private $password='';
-        private $database='hotel';
+        private $database='ecommerce';
         private $connection;
 
         public function __construct(){
