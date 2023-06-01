@@ -28,11 +28,11 @@
                <div class="col-sm-6 col-md-4 col-lg-3">
                   <div class="box">
                      <div class="option_container">
-                        <div class="options">
-                           <a href="product_details.php" class="option1">
-                           Men's Shirt
+                     <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
                            </a>
-                           <a href="cart" class="option2">
+                           <a href="" class="option2">
                            Buy Now
                            </a>
                         </div>
