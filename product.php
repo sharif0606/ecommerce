@@ -29,7 +29,7 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
+                           <a href="product_details.php" class="option1">
                            Men's Shirt
                            </a>
                            <a href="cart" class="option2">
