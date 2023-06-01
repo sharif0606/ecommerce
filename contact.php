@@ -26,7 +26,7 @@
             <div class="row">
                <div class="col-lg-8 offset-lg-2">
                   <div class="full">
-                     <form action="index.php">
+                     <form action="index.php" method="post">
                         <fieldset>
                            <input type="text" placeholder="Enter your full name" name="name" required />
                            <input type="email" placeholder="Enter your email address" name="email" required />
