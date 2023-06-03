@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2023 at 09:43 AM
+-- Generation Time: Jun 03, 2023 at 06:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -33,6 +33,22 @@ CREATE TABLE `brand_tbl` (
   `created_at` datetime DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_at` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catagory_tbl`
+--
+
+CREATE TABLE `catagory_tbl` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -124,6 +140,41 @@ CREATE TABLE `size_tbl` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subcategory_tbl`
+--
+
+CREATE TABLE `subcategory_tbl` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `catagory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_at` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_subcatagory`
+--
+
+CREATE TABLE `sub_subcatagory` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `catagory_id` int(11) DEFAULT NULL,
+  `Subcategory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_at` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users_tbl`
 --
 
@@ -171,9 +222,27 @@ ALTER TABLE `brand_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `catagory_tbl`
+--
+ALTER TABLE `catagory_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_tbt`
 --
 ALTER TABLE `product_tbt`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subcategory_tbl`
+--
+ALTER TABLE `subcategory_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sub_subcatagory`
+--
+ALTER TABLE `sub_subcatagory`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -193,9 +262,27 @@ ALTER TABLE `brand_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `catagory_tbl`
+--
+ALTER TABLE `catagory_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `product_tbt`
 --
 ALTER TABLE `product_tbt`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subcategory_tbl`
+--
+ALTER TABLE `subcategory_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sub_subcatagory`
+--
+ALTER TABLE `sub_subcatagory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
