@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['userid'])){
+        echo "<script>window.location='login.php'</script>";
+        exit;
+    }
+
     $base_url="http://localhost/ecommerce/admin/";
     require_once('../class/crud.php');
     $mysqli=new crud;

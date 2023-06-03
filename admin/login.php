@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $base_url="http://localhost/ecommerce/admin/";
     require_once('../class/crud.php');
     $mysqli=new crud;
@@ -60,11 +61,11 @@
                         </div>
                     <form method="post" action="">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="floatingInput" placeholder="name@example.com">
+                            <input type="email" class="form-control" name="email" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" name="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         
@@ -76,16 +77,17 @@
                             $where['email']=$_POST['email'];
                             $where['password']=sha1(md5($_POST['password']));
                             
-                            $rs=$mysqli->common_select('users','*',$where);
+                            $rs=$mysqli->common_select_single('users_tbl','*',$where);
+                           
                             if(!$rs['error']){
                                 
-                                if(isset($rs['data'][0])){
-                                $_SESSION['userid']=$rs['data'][0]->id;
-                                $_SESSION['email']=$rs['data'][0]->email;
-                                $_SESSION['username']=$rs['data'][0]->name;
-                                $_SESSION['contact_no']=$rs['data'][0]->contact_no;
+                                if(isset($rs['data'])){
+                                    $_SESSION['userid']=$rs['data']->id;
+                                    $_SESSION['email']=$rs['data']->email;
+                                    $_SESSION['username']=$rs['data']->name;
+                                    $_SESSION['contact']=$rs['data']->contact;
+                                    $_SESSION['gender']=$rs['data']->gender;
                                 }
-                                print_r($rs['data']);
                                 echo "<script>window.location='dashboard.php'</script>";
                             }else{
                                 echo $rs['error'];
