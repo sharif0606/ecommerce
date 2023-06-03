@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 06:18 AM
+-- Generation Time: Jun 03, 2023 at 06:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -56,24 +56,24 @@ CREATE TABLE `catagory_tbl` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_tbt`
+-- Table structure for table `product_tbl`
 --
 
-CREATE TABLE `product_tbt` (
+CREATE TABLE `product_tbl` (
   `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `price` float(8,2) DEFAULT NULL,
-  `united` tinyint(3) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `subcategory_id` smallint(5) DEFAULT NULL,
-  `brandid` tinyint(3) DEFAULT NULL,
-  `vat` float(5,2) DEFAULT NULL,
-  `discount` float(4,2) DEFAULT NULL,
-  `picture` varchar(255) DEFAULT NULL,
-  `stock` smallint(5) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `subcategory_id` int(11) DEFAULT NULL,
+  `brandid` int(11) DEFAULT NULL,
+  `vat` decimal(8,2) DEFAULT NULL,
+  `discount` decimal(8,2) DEFAULT NULL,
+  `picture` blob DEFAULT NULL,
+  `stock` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -228,9 +228,9 @@ ALTER TABLE `catagory_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product_tbt`
+-- Indexes for table `product_tbl`
 --
-ALTER TABLE `product_tbt`
+ALTER TABLE `product_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -268,9 +268,9 @@ ALTER TABLE `catagory_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `product_tbt`
+-- AUTO_INCREMENT for table `product_tbl`
 --
-ALTER TABLE `product_tbt`
+ALTER TABLE `product_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
