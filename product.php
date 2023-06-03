@@ -29,10 +29,9 @@
                   <div class="box">
                      <div class="option_container">
                      <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                          
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -54,10 +53,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                            
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -79,10 +76,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                         
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -104,10 +99,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -129,10 +122,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                            
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -154,10 +145,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -179,9 +168,7 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
+                         
                            <a href="" class="option2">
                            Buy Now
                            </a>
@@ -204,10 +191,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                            
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -229,10 +214,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -254,10 +237,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                        
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -279,10 +260,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -304,10 +283,8 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
+                           
+                           <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
                         </div>
@@ -327,7 +304,7 @@
                </div>
             </div>
             <div class="btn-box">
-               <a href="">
+               <a href="product.php">
                View All products
                </a>
             </div>
