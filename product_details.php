@@ -9,7 +9,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="full">
-                     <h3 > Product Grid</h3>
+                     <h3> Product Detail</h3>
                   </div>
                </div>
             </div>
@@ -19,11 +19,6 @@
       <!-- product section -->
       <section class="product_section layout_padding">
          <div class="container">
-            <div class="heading_container heading_center">
-               <h2>
-                  Our <span>products</span>
-               </h2>
-            </div>
             <div class="row">
                <div class="com-sm-6">
                   <img src="assets/images/p1.png"" alt="">
