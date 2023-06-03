@@ -111,8 +111,11 @@
 	<!-- row.// -->
 	<hr>
 	<a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-	<a href="#" class="btn btn-lg btn-primary text-uppercase"> <i class="fas fa-shopping-cart">
+	<a href="#" class="btn btn-lg btn-primary text-uppercase"> <i class="">
 	</i> Add to cart </a>
+
+	<a href="product.php" class="btn btn-lg btn-primary text-uppercase"> <i class=" ">
+	</i> Choose another Product</a>
 </article> 
 <!-- card-body.// -->
 		</aside> 

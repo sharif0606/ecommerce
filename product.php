@@ -304,7 +304,7 @@
                </div>
             </div>
             <div class="btn-box">
-               <a href="product_details.php">
+               <a href="product.php">
                View All products
                </a>
             </div>
