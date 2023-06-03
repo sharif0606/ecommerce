@@ -78,7 +78,7 @@
                             $where['password']=sha1(md5($_POST['password']));
                             
                             $rs=$mysqli->common_select_single('users_tbl','*',$where);
-                           
+                          
                             if(!$rs['error']){
                                 
                                 if(isset($rs['data'])){

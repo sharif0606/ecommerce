@@ -27,6 +27,64 @@
                     <a href="category_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Subcatecory</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="subcategory_list.php" class="dropdown-item">List</a>
+                    <a href="subcategory_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Brand</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="brand_list.php" class="dropdown-item">List</a>
+                    <a href="brand_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Product</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="product_list.php" class="dropdown-item">List</a>
+                    <a href="product_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Sales</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="sales_list.php" class="dropdown-item">List</a>
+                    <a href="sales_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Shipping</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="shipping_list.php" class="dropdown-item">List</a>
+                    <a href="shipping_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Size</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="size_list.php" class="dropdown-item">List</a>
+                    <a href="size_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Shipping</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="shipping_list.php" class="dropdown-item">List</a>
+                    <a href="shipping_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+           
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Wishlist</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="wishlist_list.php" class="dropdown-item">List</a>
+                    <a href="wishlist_create.php" class="dropdown-item">Add New</a>
+                </div>
+            </div>
+        
            
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
@@ -35,10 +93,10 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="signin.html" class="dropdown-item">Sign In</a>
-                    <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    <a href="login.php" class="dropdown-item">Sign In</a>
+                    <a href="register.php" class="dropdown-item">Sign Up</a>
                     <a href="404.html" class="dropdown-item">404 Error</a>
-                    <a href="blank.html" class="dropdown-item">Blank Page</a>
+                    <a href="blank_page.php" class="dropdown-item">Blank Page</a>
                 </div>
             </div>
         </div>
