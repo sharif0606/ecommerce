@@ -1,12 +1,18 @@
 <?php require_once('include/header.php') ?>
+<?php require_once('include/newslettwer.php') ?>
 <body>
       <div class="hero_area">
          <!-- header section strats -->
          <?php require_once('include/sidebar.php') ?>
+
+         <a href="http://newslettwer.php"></a>
       
          <!-- end header section -->
    <!-- slider section -->
    <section class="slider_section ">
+
+      
+
       <div class="slider_bg_box">
          <img src="<?= $base_url ?>assets/images/slider-bg.jpg" alt="">
       </div>
