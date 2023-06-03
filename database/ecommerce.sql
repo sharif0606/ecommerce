@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 06:40 AM
+-- Generation Time: Jun 03, 2023 at 08:56 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -40,10 +40,10 @@ CREATE TABLE `brand_tbl` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catagory_tbl`
+-- Table structure for table `category_tbl`
 --
 
-CREATE TABLE `catagory_tbl` (
+CREATE TABLE `category_tbl` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -52,6 +52,13 @@ CREATE TABLE `catagory_tbl` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category_tbl`
+--
+
+INSERT INTO `category_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Food Item', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -157,10 +164,10 @@ CREATE TABLE `subcategory_tbl` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_subcatagory`
+-- Table structure for table `sub_subcategory`
 --
 
-CREATE TABLE `sub_subcatagory` (
+CREATE TABLE `sub_subcategory` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `catagory_id` int(11) DEFAULT NULL,
@@ -182,7 +189,7 @@ CREATE TABLE `users_tbl` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` char(32) NOT NULL,
+  `password` char(255) NOT NULL,
   `type` char(32) NOT NULL,
   `address` varchar(255) NOT NULL,
   `contact` varchar(255) NOT NULL,
@@ -192,8 +199,15 @@ CREATE TABLE `users_tbl` (
   `created_by` int(11) NOT NULL,
   `updated_at` datetime NOT NULL,
   `updated_by` int(11) NOT NULL,
-  `deleted_at` int(11) NOT NULL
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users_tbl`
+--
+
+INSERT INTO `users_tbl` (`id`, `name`, `email`, `password`, `type`, `address`, `contact`, `gender`, `picture`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Kamal Uddin', 'kamal@yahoo.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -202,6 +216,7 @@ CREATE TABLE `users_tbl` (
 --
 
 CREATE TABLE `wishlist_tbl` (
+  `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `user_id` int(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -222,9 +237,9 @@ ALTER TABLE `brand_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `catagory_tbl`
+-- Indexes for table `category_tbl`
 --
-ALTER TABLE `catagory_tbl`
+ALTER TABLE `category_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -240,16 +255,22 @@ ALTER TABLE `subcategory_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sub_subcatagory`
+-- Indexes for table `sub_subcategory`
 --
-ALTER TABLE `sub_subcatagory`
+ALTER TABLE `sub_subcategory`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users_tbl`
+--
+ALTER TABLE `users_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `wishlist_tbl`
 --
 ALTER TABLE `wishlist_tbl`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -262,10 +283,10 @@ ALTER TABLE `brand_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `catagory_tbl`
+-- AUTO_INCREMENT for table `category_tbl`
 --
-ALTER TABLE `catagory_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `category_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
@@ -280,16 +301,22 @@ ALTER TABLE `subcategory_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sub_subcatagory`
+-- AUTO_INCREMENT for table `sub_subcategory`
 --
-ALTER TABLE `sub_subcatagory`
+ALTER TABLE `sub_subcategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users_tbl`
+--
+ALTER TABLE `users_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wishlist_tbl`
 --
 ALTER TABLE `wishlist_tbl`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
