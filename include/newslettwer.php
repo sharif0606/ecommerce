@@ -43,19 +43,19 @@
   </div>
 
   <script>
-    $(document).ready(function () {
-      if (localStorage.getItem("hidePopup") !== "true") {
-        $('#newsletterModal').modal('show');
-      }
-    });
+    // $(document).ready(function () {
+    //   if (localStorage.getItem("hidePopup") !== "true") {
+    //     $('#newsletterModal').modal('show');
+    //   }
+    // });
 
-    $('#subscribeBtn').click(function () {
-      // Subscribe logic here
-      // You can add your own code to process the subscription
-      if ($('#hidePopupCheck').is(':checked')) {
-        localStorage.setItem("hidePopup", "true");
-      }
-    });
+    // $('#subscribeBtn').click(function () {
+    //   // Subscribe logic here
+    //   // You can add your own code to process the subscription
+    //   if ($('#hidePopupCheck').is(':checked')) {
+    //     localStorage.setItem("hidePopup", "true");
+    //   }
+    // });
   </script>
 
 </body>
