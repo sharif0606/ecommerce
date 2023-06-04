@@ -11,21 +11,25 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Subsubcategory</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Sub Category</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
-                            $data=$mysqli->common_select('subsubcategory_tbl');
+                            $data=$mysqli->common_select_query('SELECT category_tbl.name as category, subcategory_tbl.* FROM `subcategory_tbl`
+                            join category_tbl on category_tbl.id=subcategory_tbl.category_id
+                            WHERE subcategory_tbl.deleted_at is null');
                             if(!$data['error']){
                                 foreach($data['data'] as $d){
                         ?>
                             <tr>
                                 <th><?= $d->id ?></th>
+                                <th><?= $d->category ?></th>
                                 <th><?= $d->name ?></th>
                                 <th>
-                                    <a href="subsubcategory_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="subcategory_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
 
                             </th>
                                

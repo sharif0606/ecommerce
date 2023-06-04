@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 09:21 AM
+-- Generation Time: Jun 04, 2023 at 06:29 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -36,6 +36,13 @@ CREATE TABLE `brand_tbl` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `brand_tbl`
+--
+
+INSERT INTO `brand_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'HP', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -113,53 +120,26 @@ CREATE TABLE `sales_tbl` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shipping_tbl`
---
-
-CREATE TABLE `shipping_tbl` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `city_id` tinyint(3) NOT NULL,
-  `amount` float(8,2) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `size_tbl`
---
-
-CREATE TABLE `size_tbl` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `subcategory_tbl`
 --
 
 CREATE TABLE `subcategory_tbl` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `catagory_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subcategory_tbl`
+--
+
+INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'sweets m', 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,14 +150,21 @@ CREATE TABLE `subcategory_tbl` (
 CREATE TABLE `sub_subcategory` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `catagory_id` int(11) DEFAULT NULL,
-  `Subcategory_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `subcategory_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sub_subcategory`
+--
+
+INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'sdf', 1, 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -280,7 +267,7 @@ ALTER TABLE `wishlist_tbl`
 -- AUTO_INCREMENT for table `brand_tbl`
 --
 ALTER TABLE `brand_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category_tbl`
@@ -298,13 +285,13 @@ ALTER TABLE `product_tbl`
 -- AUTO_INCREMENT for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sub_subcategory`
 --
 ALTER TABLE `sub_subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users_tbl`

@@ -8,7 +8,7 @@
                 <h6 class="mb-4">Sub_subcategory Edit</h6>
                 <?php
                   $where['id']=$_GET['id'];
-                  $data=$mysqli->common_select_single('sub_subcategory_tbl','*',$where);
+                  $data=$mysqli->common_select_single('sub_subcategory','*',$where);
                  
                   if(!$data['error'])
                     $d=$data['data'];
@@ -18,6 +18,30 @@
                   }
                 ?>
                 <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="category_id" class="form-label">Category:</label>
+                        <select class="form-control" id="category_id" name="category_id">
+                            <?php
+                                $data=$mysqli->common_select('category_tbl');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option value="<?= $dt->id ?>" <?= $d->category_id==$dt->id?"selected":""?>><?= $dt->name ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subcategory_id" class="form-label">Sub Category:</label>
+                        <select class="form-control" id="subcategory_id" name="subcategory_id">
+                            <?php
+                                $data=$mysqli->common_select('subcategory_tbl');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option class="scat scat<?= $dt->category_id?>" <?= $d->subcategory_id==$dt->id?"selected":""?> value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Sub_subcategory</label>
                         <input type="text" value="<?= $d->name ?>" class="form-control" id="name" name="name">

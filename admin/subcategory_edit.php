@@ -1,6 +1,6 @@
 <?php require_once('include/header.php') ?>
 <?php require_once('include/sidebar.php') ?>
-
+ 
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
         <div class="col-sm-12 col-xl-6">
@@ -18,6 +18,18 @@
                   }
                 ?>
                 <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="category_id" class="form-label">Category:</label>
+                        <select class="form-control" id="category_id" name="category_id">
+                            <?php
+                                $data=$mysqli->common_select('category_tbl');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option value="<?= $dt->id ?>" <?= $d->category_id==$dt->id?"selected":"" ?>><?= $dt->name ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Subcategory</label>
                         <input type="text" value="<?= $d->name ?>" class="form-control" id="name" name="name">

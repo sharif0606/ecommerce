@@ -6,11 +6,24 @@
         <div class="col-sm-12 col-xl-6">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Subcategory Add</h6>
-                <form method="post" action="">
+                <form method="post" action=""> 
                     <div class="mb-3">
-                        <label for="name" class="form-label">Subcategory</label>
+                        <label for="category_id" class="form-label">Category:</label>
+                        <select class="form-control" id="category_id" name="category_id">
+                            <?php
+                                $data=$mysqli->common_select('category_tbl');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Sub Category</label>
                         <input type="text" class="form-control" id="name" name="name">
                     </div>
+
                     <button type="submit" class="btn btn-primary">Add</button>
                 </form>
                 <?php
