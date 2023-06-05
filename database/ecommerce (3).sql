@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 08:09 AM
+-- Generation Time: Jun 05, 2023 at 08:13 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -84,31 +84,6 @@ INSERT INTO `category_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_a
 (8, 'Home Appliances', NULL, NULL, NULL, NULL, NULL),
 (9, 'Home & Lifestyle', NULL, NULL, NULL, NULL, NULL),
 (10, 'Groceries', NULL, NULL, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `product_tbl`
---
-
-CREATE TABLE `product_tbl` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `price` double DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `subcategory_id` int(11) DEFAULT NULL,
-  `brandid` int(11) DEFAULT NULL,
-  `vat` decimal(8,2) DEFAULT NULL,
-  `discount` decimal(8,2) DEFAULT NULL,
-  `picture` blob DEFAULT NULL,
-  `stock` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -308,37 +283,6 @@ INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_tbl`
---
-
-CREATE TABLE `users_tbl` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` char(255) NOT NULL,
-  `type` char(32) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `contact` varchar(255) NOT NULL,
-  `gender` varchar(4) NOT NULL,
-  `picture` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users_tbl`
---
-
-INSERT INTO `users_tbl` (`id`, `name`, `email`, `password`, `type`, `address`, `contact`, `gender`, `picture`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Kamal Uddin', 'kamal@yahoo.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL),
-(2, 'Kaiser', 'isdbstudent@gmail.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `wishlist_tbl`
 --
 
@@ -370,12 +314,6 @@ ALTER TABLE `category_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product_tbl`
---
-ALTER TABLE `product_tbl`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
@@ -385,12 +323,6 @@ ALTER TABLE `subcategory_tbl`
 -- Indexes for table `sub_subcategory`
 --
 ALTER TABLE `sub_subcategory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_tbl`
---
-ALTER TABLE `users_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -416,12 +348,6 @@ ALTER TABLE `category_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `product_tbl`
---
-ALTER TABLE `product_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
@@ -432,12 +358,6 @@ ALTER TABLE `subcategory_tbl`
 --
 ALTER TABLE `sub_subcategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
-
---
--- AUTO_INCREMENT for table `users_tbl`
---
-ALTER TABLE `users_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wishlist_tbl`
