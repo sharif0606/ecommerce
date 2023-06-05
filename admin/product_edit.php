@@ -17,10 +17,22 @@
                     
                   }
                 ?>
-                <form method="post" action="">
+               <form method="post" action="">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Product</label>
-                        <input type="text" value="<?= $d->name ?>" class="form-control" id="name" name="name">
+                        <label for="title" class="form-label">Title:</label>
+                        <select class="form-control" id="title" name="title">
+                            <?php
+                                $data=$mysqli->common_select('product_tbl');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option value="<?= $dt->id ?>" <?= $d->title==$dt->id?"selected":"" ?>><?= $dt->name ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="text" value="<?= $d->name ?>" class="form-control" id="price" name="price">
                     </div>
                     <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>

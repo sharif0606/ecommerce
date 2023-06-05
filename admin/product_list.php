@@ -11,7 +11,15 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Product</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Category_id</th>
+                                <th scope="col">Sub_Category_id</th>
+                                <th scope="col">Vat</th>
+                                <th scope="col">Discount</th>
+                                <th scope="col">Picture</th>
+                                <th scope="col">Stock</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -23,7 +31,15 @@
                         ?>
                             <tr>
                                 <th><?= $d->id ?></th>
-                                <th><?= $d->name ?></th>
+                                <th><?= $d->title ?></th>
+                                <th><?= $d->price ?></th>
+                                <th><?= $d->date ?></th>
+                                <th><?= $d->category_id ?></th>
+                                <th><?= $d->subcategory_id ?></th>
+                                <th><?= $d->vat ?></th>
+                                <th><?= $d->discount ?></th>
+                                <th><?= $d->picture ?></th>
+                                <th><?= $d->stock ?></th>
                                 <th>
                                     <a href="product_list.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
 
