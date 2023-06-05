@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 07:01 AM
+-- Generation Time: Jun 05, 2023 at 07:13 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -289,7 +289,21 @@ INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `c
 (56, 'Chocolates', 10, 33, NULL, NULL, NULL, NULL, NULL),
 (57, 'Fruits', 10, 34, NULL, NULL, NULL, NULL, NULL),
 (58, 'Herbs', 10, 35, NULL, NULL, NULL, NULL, NULL),
-(59, 'Cables', 8, 36, NULL, NULL, NULL, NULL, NULL);
+(59, 'Cables', 8, 36, NULL, NULL, NULL, NULL, NULL),
+(60, 'Ceiling Fans', 8, 37, NULL, NULL, NULL, NULL, NULL),
+(61, 'Walton', 8, 38, NULL, NULL, NULL, NULL, NULL),
+(62, 'Heaters', 8, 39, NULL, NULL, NULL, NULL, NULL),
+(63, 'Pureit', 8, 40, NULL, NULL, NULL, NULL, NULL),
+(64, 'Gear Cycles', 1, 41, NULL, NULL, NULL, NULL, NULL),
+(65, 'XYZ', 1, 42, NULL, NULL, NULL, NULL, NULL),
+(66, 'Lotto', 1, 43, NULL, NULL, NULL, NULL, NULL),
+(67, 'Fitness Mart', 1, 44, NULL, NULL, NULL, NULL, NULL),
+(68, 'Treadmills', 1, 45, NULL, NULL, NULL, NULL, NULL),
+(69, 'Puzzle', 4, 46, NULL, NULL, NULL, NULL, NULL),
+(70, 'Clothing', 4, 47, NULL, NULL, NULL, NULL, NULL),
+(71, 'Chocolates', 4, 48, NULL, NULL, NULL, NULL, NULL),
+(72, 'Book', 4, 49, NULL, NULL, NULL, NULL, NULL),
+(73, 'Cartoon', 4, 50, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -417,7 +431,7 @@ ALTER TABLE `subcategory_tbl`
 -- AUTO_INCREMENT for table `sub_subcategory`
 --
 ALTER TABLE `sub_subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `users_tbl`
