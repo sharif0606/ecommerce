@@ -22,7 +22,7 @@
                         <label for="name" class="form-label">Brand</label>
                         <input type="text" value="<?= $d->name ?>" class="form-control" id="name" name="name">
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </form>
                 <?php
                     if($_POST){

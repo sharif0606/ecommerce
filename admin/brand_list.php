@@ -11,7 +11,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">brand</th>
+                                <th scope="col">Brand</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
