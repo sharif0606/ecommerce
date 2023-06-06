@@ -74,9 +74,9 @@
             $sql="insert into $table set ";
             if(is_array($data)){
                 foreach($data as $k=>$v){
-                    $sql.="$k='$v',";
+                    $sql.="$k=\"$v\",";
                 }
-                $sql=rtrim($sql,',');
+                $sql=rtrim($sql,",");
             }
             $rs=$this->connection->query($sql);
             if($rs){
@@ -94,9 +94,9 @@
             $sql="update $table set ";
             if(is_array($data)){
                 foreach($data as $k=>$v){
-                    $sql.="$k='$v',";
+                    $sql.="$k=\"$v\",";
                 }
-                $sql=rtrim($sql,',');
+                $sql=rtrim($sql,",");
             }
 
             if(is_array($condition)){
