@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 06:12 AM
+-- Generation Time: Jun 06, 2023 at 08:57 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -44,14 +44,27 @@ CREATE TABLE `brand_tbl` (
 INSERT INTO `brand_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 'Aarong', NULL, NULL, NULL, NULL, NULL),
 (2, 'Shoilpic', NULL, NULL, NULL, NULL, NULL),
-(3, 'Infinity', NULL, NULL, NULL, NULL, NULL),
+(3, 'Spark Pretty', NULL, NULL, NULL, NULL, NULL),
 (4, 'Puma', NULL, NULL, NULL, NULL, NULL),
-(5, 'Gucci', NULL, NULL, NULL, NULL, NULL),
-(6, 'Tom Ford', NULL, NULL, NULL, NULL, NULL),
+(5, 'Dream Boutique', NULL, NULL, NULL, NULL, NULL),
+(6, 'Pepe Jeans', NULL, NULL, NULL, NULL, NULL),
 (7, 'Yellow', NULL, NULL, NULL, NULL, NULL),
 (8, 'Richman', NULL, NULL, NULL, NULL, NULL),
-(9, 'Sailor', NULL, NULL, NULL, NULL, NULL),
-(10, 'Rise', NULL, NULL, NULL, NULL, NULL);
+(9, 'Designer Promise', NULL, NULL, NULL, NULL, NULL),
+(10, 'Rise', NULL, NULL, NULL, NULL, NULL),
+(11, 'Amazon', NULL, NULL, NULL, NULL, NULL),
+(12, ' Apple', NULL, NULL, NULL, NULL, NULL),
+(13, 'Samsung', NULL, NULL, NULL, NULL, NULL),
+(14, 'Lenovo', NULL, NULL, NULL, NULL, NULL),
+(15, 'Express Clothes', NULL, NULL, NULL, NULL, NULL),
+(16, 'Panasonic', NULL, NULL, NULL, NULL, NULL),
+(17, 'Vision', NULL, NULL, NULL, NULL, NULL),
+(18, 'LG Butterfly', NULL, NULL, NULL, NULL, NULL),
+(19, 'Venus Jewellers Bangladesh', NULL, NULL, NULL, NULL, NULL),
+(20, 'Diamond World', NULL, NULL, NULL, NULL, NULL),
+(21, ' Amin Jewellers for Gold & Diamond', NULL, NULL, NULL, NULL, NULL),
+(22, 'Al-Amin Jewellers', NULL, NULL, NULL, NULL, NULL),
+(23, 'Sultana Jewellers Ltd', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -68,6 +81,20 @@ CREATE TABLE `category_tbl` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category_tbl`
+--
+
+INSERT INTO `category_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Women\'s & Girls\' Fashion', NULL, NULL, NULL, NULL, NULL),
+(2, 'Health & Beauty', NULL, NULL, NULL, NULL, NULL),
+(3, 'Watches, Bags, Jewellery', NULL, NULL, NULL, NULL, NULL),
+(4, 'Men\'s & Boys\' Fashion', NULL, NULL, NULL, NULL, NULL),
+(5, 'Mother & Baby', NULL, NULL, NULL, NULL, NULL),
+(6, 'Electronics Devices', NULL, NULL, NULL, NULL, NULL),
+(7, 'Electronic Accessories', NULL, NULL, NULL, NULL, NULL),
+(8, 'TV & Home Appliances', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -137,6 +164,47 @@ CREATE TABLE `subcategory_tbl` (
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `subcategory_tbl`
+--
+
+INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Traditional Wear', 1, NULL, NULL, NULL, NULL, NULL),
+(2, 'Muslim Wear', 1, NULL, NULL, NULL, NULL, NULL),
+(3, 'Wester Wear', 1, NULL, NULL, NULL, NULL, NULL),
+(4, 'Shoes', 1, NULL, NULL, NULL, NULL, NULL),
+(5, 'Bags', 1, NULL, NULL, NULL, NULL, NULL),
+(6, 'Watches', 1, NULL, NULL, NULL, NULL, NULL),
+(7, 'Skin care', 2, NULL, NULL, NULL, NULL, NULL),
+(8, 'Hair care', 2, NULL, NULL, NULL, NULL, NULL),
+(9, 'Man`s Care', 2, NULL, NULL, NULL, NULL, NULL),
+(10, 'Beauty Tools', 2, NULL, NULL, NULL, NULL, NULL),
+(11, 'Women`s Bags', 3, NULL, NULL, NULL, NULL, NULL),
+(12, 'Men`s Bags', 3, NULL, NULL, NULL, NULL, NULL),
+(13, 'Men`s Watches', 3, NULL, NULL, NULL, NULL, NULL),
+(14, 'women`s Watches', 3, NULL, NULL, NULL, NULL, NULL),
+(15, 'Clothing', 4, NULL, NULL, NULL, NULL, NULL),
+(16, 'Shoes', 4, NULL, NULL, NULL, NULL, NULL),
+(17, 'Jewellery', 4, NULL, NULL, NULL, NULL, NULL),
+(18, 'Accessories', 4, NULL, NULL, NULL, NULL, NULL),
+(19, 'Maternity Care', 5, NULL, NULL, NULL, NULL, NULL),
+(20, 'Baby & Personal Care', 5, NULL, NULL, NULL, NULL, NULL),
+(21, 'Baby Care & Gifts', 5, NULL, NULL, NULL, NULL, NULL),
+(22, 'Kids & Toys', 5, NULL, NULL, NULL, NULL, NULL),
+(23, 'Smartphones', 6, NULL, NULL, NULL, NULL, NULL),
+(24, 'Projectors', 6, NULL, NULL, NULL, NULL, NULL),
+(25, 'Cameras', 6, NULL, NULL, NULL, NULL, NULL),
+(26, 'Audio', 6, NULL, NULL, NULL, NULL, NULL),
+(27, 'Headphones', 6, NULL, NULL, NULL, NULL, NULL),
+(28, 'Computer Accessories', 7, NULL, NULL, NULL, NULL, NULL),
+(29, 'Computer Components', 7, NULL, NULL, NULL, NULL, NULL),
+(30, 'Network', 7, NULL, NULL, NULL, NULL, NULL),
+(31, 'Camera Accessories', 7, NULL, NULL, NULL, NULL, NULL),
+(32, 'Telivision', 8, NULL, NULL, NULL, NULL, NULL),
+(33, 'Air Condition', 8, NULL, NULL, NULL, NULL, NULL),
+(34, 'Fans', 8, NULL, NULL, NULL, NULL, NULL),
+(35, 'Cooling & Heating', 8, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -154,6 +222,23 @@ CREATE TABLE `sub_subcategory` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sub_subcategory`
+--
+
+INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Shalwar Kameez', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(2, 'Sarees', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(3, 'Party Kameez & Gowns', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(4, 'Plazzo Pants & Culottes', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(5, 'Pants, Palazzoa & Capris', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(6, 'Hijabs', 1, 2, NULL, NULL, NULL, NULL, NULL),
+(7, 'T-Shirts', 1, 3, NULL, NULL, NULL, NULL, NULL),
+(8, 'Face Wash & Cleansers', 2, 7, NULL, NULL, NULL, NULL, NULL),
+(9, 'Casual Shirts', 4, 15, NULL, NULL, NULL, NULL, NULL),
+(10, 'Casual Shirts', 4, 15, NULL, NULL, NULL, NULL, NULL),
+(11, 'Shirts', 1, 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -256,13 +341,13 @@ ALTER TABLE `wishlist_tbl`
 -- AUTO_INCREMENT for table `brand_tbl`
 --
 ALTER TABLE `brand_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `category_tbl`
 --
 ALTER TABLE `category_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
@@ -274,13 +359,13 @@ ALTER TABLE `product_tbl`
 -- AUTO_INCREMENT for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sub_subcategory`
 --
 ALTER TABLE `sub_subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users_tbl`
