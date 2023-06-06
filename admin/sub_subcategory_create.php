@@ -9,7 +9,7 @@
                 <form method="post" action="">
                     <div class="mb-3">
                         <label for="category_id" class="form-label">Category:</label>
-                        <select class="form-control" id="category_id" name="category_id">
+                        <select onchange="select_sub_cat(this.value)" class="form-control" id="category_id" name="category_id">
                             <?php
                                 $data=$mysqli->common_select('category_tbl');
                                 if(!$data['error']){
@@ -27,7 +27,7 @@
                                 if(!$data['error']){
                                     foreach($data['data'] as $dt){
                             ?>
-                                <option class="scat scat<?= $dt->category_id?>" value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                                <option class="sub sub<?= $dt->category_id?>" value="<?= $dt->id ?>"><?= $dt->name ?></option>
                             <?php } } ?>
                         </select>
                     </div>
@@ -54,3 +54,9 @@
 <!-- Form End -->
 
 <?php require_once('include/footer.php') ?>
+<script>
+    function select_sub_cat(e){
+        $('.sub').hide();
+        $('.sub'+e).show();
+    }
+</script>

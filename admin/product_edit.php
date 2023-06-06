@@ -8,39 +8,128 @@
                 <h6 class="mb-4">Category Edit</h6>
                 <?php
                   $where['id']=$_GET['id'];
-                  $data=$mysqli->common_select_single('category_tbl','*',$where);
+                  $data=$mysqli->common_select_single('product_tbl','*',$where);
                  
                   if(!$data['error'])
                     $d=$data['data'];
-                  else{
+                  else
                     echo "<h2 class='text-danger text-center'>This url is not correct</h2>";
-                    
-                  }
                 ?>
-               <form method="post" action="">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title:</label>
-                        <select class="form-control" id="title" name="title">
-                            <?php
-                                $data=$mysqli->common_select('product_tbl');
-                                if(!$data['error']){
-                                    foreach($data['data'] as $dt){
-                            ?>
-                                <option value="<?= $dt->id ?>" <?= $d->title==$dt->id?"selected":"" ?>><?= $dt->name ?></option>
-                            <?php } } ?>
-                        </select>
+               <form enctype="multipart/form-data" action="" method="post">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" value="<?= $d->name ?>" class="form-control" id="name" name="name">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Catagory</label>
+                                <select class="form-control" onchange="select_sub_cat(this.value)" id="category_id" name="category_id">
+                                    <?php
+                                        $data=$mysqli->common_select('category_tbl');
+                                        if(!$data['error']){
+                                            foreach($data['data'] as $dt){
+                                    ?>
+                                        <option <?= $d->category_id==$dt->id?"selected":""?> value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                                    <?php } } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Sub Catagory</label>
+                                <select class="form-control" onchange="select_subsub_cat(this.value)" id="subcategory_id" name="subcategory_id">
+                                    <?php
+                                        $data=$mysqli->common_select('subcategory_tbl');
+                                        if(!$data['error']){
+                                            foreach($data['data'] as $dt){
+                                    ?>
+                                        <option <?= $d->subcategory_id==$dt->id?"selected":""?> class="sub sub<?= $dt->category_id ?>" value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                                    <?php } } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Sub Sub Catagory</label>
+                                <select class="form-control" id="sub_subcategory_id" name="sub_subcategory_id">
+                                    <?php
+                                        $data=$mysqli->common_select('sub_subcategory');
+                                        if(!$data['error']){
+                                            foreach($data['data'] as $dt){
+                                    ?>
+                                        <option <?= $d->sub_subcategory_id==$dt->id?"selected":""?> class="subsub subsub<?= $dt->category_id ?>" value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                                    <?php } } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Brand</label>
+                                <select class="form-control" id="brand_id" name="brand_id">
+                                    <?php
+                                        $data=$mysqli->common_select('brand_tbl');
+                                        if(!$data['error']){
+                                            foreach($data['data'] as $dt){
+                                    ?>
+                                        <option <?= $d->brand_id==$dt->id?"selected":""?> value="<?= $dt->id ?>"><?= $dt->name ?></option>
+                                    <?php } } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price:</label>
+                                <input type="text" class="form-control" value="<?= $d->price ?>" id="price" name="price">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Vat</label>
+                                <input type="text" class="form-control" value="<?= $d->vat ?>" id="vat" name="vat">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Discount</label>
+                                <input type="text" class="form-control" value="<?= $d->discount ?>" id="discount" name="discount">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Picture</label>
+                                <input type="file" class="form-control" id="picture" name="picture">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Stock</label>
+                                <input type="text" class="form-control" value="<?= $d->stock ?>" id="stock" name="stock">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Description</label>
+                                <textarea class="form-control" id="details" name="details"><?= $d->details ?></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="price" class="form-label">Price:</label>
-                        <input type="text" value="<?= $d->name ?>" class="form-control" id="price" name="price">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </form>
                 <?php
                     if($_POST){
+                        if($_FILES['picture']['name']){
+                            $imgname=time().rand(1111,9999).'.'.pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                            $rs=move_uploaded_file($_FILES['picture']['tmp_name'],"upload/product/$imgname");
+                            if($rs)
+                              $_POST['picture']=$imgname;
+                        }
                         $rs=$mysqli->common_update('product_tbl',$_POST,$where);
                         if(!$rs['error']){
-                        echo "<script>window.location='product_list.php'</script>";
+                        //echo "<script>window.location='product_list.php'</script>";
                         }else{
                             echo $rs['error'];
                         }
@@ -53,3 +142,13 @@
 <!-- Form End -->
 
 <?php require_once('include/footer.php') ?>
+<script>
+    function select_sub_cat(e){
+        $('.sub').hide();
+        $('.sub'+e).show();
+    }
+    function select_subsub_cat(e){
+        $('.subsub').hide();
+        $('.subsub'+e).show();
+    }
+</script>
