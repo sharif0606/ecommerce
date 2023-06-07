@@ -114,13 +114,13 @@
                     if($_POST){
                         if($_FILES['picture']['name']){
                             $imgname=time().rand(1111,9999).'.'.pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-                            $rs=move_uploaded_file($_FILES['picture']['tmp_name'],"upload/product/$imgname");
+                            $rs=move_uploaded_file($_FILES['picture']['tmp_name'],"../upload/product/$imgname");
                             if($rs)
                               $_POST['picture']=$imgname;
                           }
                         $rs=$mysqli->common_create('product_tbl',$_POST);
                         if(!$rs['error']){
-                        echo "<script>window.location='product_list.php'</script>";
+                         echo "<script>window.location='product_list.php'</script>";
                         }else{
                             echo $rs['error'];
                         }
