@@ -23,7 +23,7 @@
                         ?>
                             <tr>
                                 <th><?= $d->id ?></th>
-                                <th><?= $d->name ?></th>
+                                <th><?= $d->full_name ?></th>
                                 <th>
                                     <a href="sales_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
 

@@ -26,7 +26,7 @@
                 </form>
                 <?php
                     if($_POST){
-                        $rs=$mysqli->common_update('sales_tbl',$_POST,$where);
+                        $rs=$mysqli->common_select('sales_tbl',$_POST,$where);
                         if(!$rs['error']){
                         echo "<script>window.location='sales_list.php'</script>";
                         }else{

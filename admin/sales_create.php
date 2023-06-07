@@ -9,13 +9,13 @@
                 <form method="post" action="">
                     <div class="mb-3">
                         <label for="name" class="form-label">Sales</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="full_name">
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </form>
                 <?php
                     if($_POST){
-                        $rs=$mysqli->common_create('sales_tbl',$_POST);
+                        $rs=$mysqli->common_select('sales_tbl',$_POST);
                         if(!$rs['error']){
                         echo "<script>window.location='sales_list.php'</script>";
                         }else{

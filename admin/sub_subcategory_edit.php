@@ -8,7 +8,7 @@
                 <h6 class="mb-4">Sub_subcategory Edit</h6>
                 <?php
                   $where['id']=$_GET['id'];
-                  $data=$mysqli->common_select_single('sub_subcategory','*',$where);
+                  $data=$mysqli->common_select_single('sub_subcategory_tbl','*',$where);
                  
                   if(!$data['error'])
                     $d=$data['data'];
