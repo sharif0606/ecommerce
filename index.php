@@ -411,7 +411,7 @@
                   <img src="<?= $base_url?>upload/product/<?= $d->picture ?>" alt="">
                </div>
                <div class="detail-box">
-                  <h5><?= $d->name ?></h5>
+                  <h5><?= $d->name ?></h5> <br>
                   <h6>BDT <?= $d->price ?></h6>
                </div>
             </div>
