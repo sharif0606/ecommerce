@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 08:57 AM
+-- Generation Time: Jun 07, 2023 at 05:29 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -130,10 +130,10 @@ CREATE TABLE `product_tbl` (
 
 CREATE TABLE `sales_tbl` (
   `id` int(11) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `shipping_id` smallint(5) NOT NULL,
   `coupon_discount` float(4,2) NOT NULL,
-  `full_name` varchar(255) NOT NULL,
   `contact` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `post_code` varchar(255) NOT NULL,
@@ -146,6 +146,17 @@ CREATE TABLE `sales_tbl` (
   `updated_by` int(11) NOT NULL,
   `deleted_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sales_tbl`
+--
+
+INSERT INTO `sales_tbl` (`id`, `full_name`, `user_id`, `shipping_id`, `coupon_discount`, `contact`, `address`, `post_code`, `date`, `payment`, `transaction_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(0, '', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -208,10 +219,10 @@ INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_subcategory`
+-- Table structure for table `sub_subcategory_tbl`
 --
 
-CREATE TABLE `sub_subcategory` (
+CREATE TABLE `sub_subcategory_tbl` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -224,10 +235,10 @@ CREATE TABLE `sub_subcategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sub_subcategory`
+-- Dumping data for table `sub_subcategory_tbl`
 --
 
-INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+INSERT INTO `sub_subcategory_tbl` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 'Shalwar Kameez', 1, 1, NULL, NULL, NULL, NULL, NULL),
 (2, 'Sarees', 1, 1, NULL, NULL, NULL, NULL, NULL),
 (3, 'Party Kameez & Gowns', 1, 1, NULL, NULL, NULL, NULL, NULL),
@@ -316,9 +327,9 @@ ALTER TABLE `subcategory_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sub_subcategory`
+-- Indexes for table `sub_subcategory_tbl`
 --
-ALTER TABLE `sub_subcategory`
+ALTER TABLE `sub_subcategory_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -362,9 +373,9 @@ ALTER TABLE `subcategory_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT for table `sub_subcategory`
+-- AUTO_INCREMENT for table `sub_subcategory_tbl`
 --
-ALTER TABLE `sub_subcategory`
+ALTER TABLE `sub_subcategory_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
