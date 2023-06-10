@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2023 at 05:29 AM
+-- Generation Time: Jun 10, 2023 at 08:26 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -122,6 +122,30 @@ CREATE TABLE `product_tbl` (
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `product_tbl`
+--
+
+INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `subcategory_id`, `sub_subcategory_id`, `brand_id`, `vat`, `discount`, `picture`, `stock`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'DESIGNER SHALWAR KAMEEZ', '', 1500, 1, 1, 1, 1, '10.00', '15.00', 0x31363836313230383739313338322e6a7067, '7', NULL, NULL, NULL, NULL, NULL),
+(2, 'Rayon Cotton embroidery Kameez', '', 4500, 1, 1, 1, 1, '0.00', '0.00', 0x31363836313231303139333739312e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
+(3, 'South Indian Saree', '', 25000, 1, 1, 2, 7, '0.00', '0.00', 0x31363836313231313831313237322e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(4, 'Bangladeshi Sarees', '', 4500, 1, 1, 2, 1, '0.00', '0.00', 0x31363836313231323137323936332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(5, 'Hizab', '', 1000, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343139383237352e6a706567, '10', NULL, NULL, NULL, NULL, NULL),
+(6, 'Stylish Hijab', '', 1500, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343534363835362e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
+(7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '10', NULL, NULL, NULL, NULL, NULL),
+(8, 'Stylish T-shirt', '', 600, 1, 1, 7, 1, '0.00', '0.00', 0x31363836313231393337373732332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(9, 'Shoe', '', 4500, 1, 4, 9, 10, '0.00', '0.00', 0x31363836313232313732353330362e6a706567, '', NULL, NULL, NULL, NULL, NULL),
+(10, 'Party Shoe', '', 5000, 1, 4, 9, 7, '0.00', '0.00', 0x31363836313232323230393336392e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
+(11, 'Fashion Bags', '', 4500, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363030393130382e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
+(12, 'Casual bag', '', 5000, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363239393736322e6a7067, '40', NULL, NULL, NULL, NULL, NULL),
+(13, 'Women Watach', '', 2000, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233303837353633392e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(14, 'Fashionable Women Watch', '', 2500, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233313232363039352e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
+(15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '', NULL, NULL, NULL, NULL, NULL),
+(18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '', NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -219,10 +243,10 @@ INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_subcategory_tbl`
+-- Table structure for table `sub_subcategory`
 --
 
-CREATE TABLE `sub_subcategory_tbl` (
+CREATE TABLE `sub_subcategory` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -235,10 +259,10 @@ CREATE TABLE `sub_subcategory_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sub_subcategory_tbl`
+-- Dumping data for table `sub_subcategory`
 --
 
-INSERT INTO `sub_subcategory_tbl` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 'Shalwar Kameez', 1, 1, NULL, NULL, NULL, NULL, NULL),
 (2, 'Sarees', 1, 1, NULL, NULL, NULL, NULL, NULL),
 (3, 'Party Kameez & Gowns', 1, 1, NULL, NULL, NULL, NULL, NULL),
@@ -279,7 +303,9 @@ CREATE TABLE `users_tbl` (
 --
 
 INSERT INTO `users_tbl` (`id`, `name`, `email`, `password`, `type`, `address`, `contact`, `gender`, `picture`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Kamal Uddin', 'kamal@yahoo.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
+(1, 'Kamal Uddin', 'kamal@yahoo.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL),
+(2, '', 'admin@gmail.com', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL),
+(3, '', 'admin@gmail.com', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -327,9 +353,9 @@ ALTER TABLE `subcategory_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sub_subcategory_tbl`
+-- Indexes for table `sub_subcategory`
 --
-ALTER TABLE `sub_subcategory_tbl`
+ALTER TABLE `sub_subcategory`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -364,7 +390,7 @@ ALTER TABLE `category_tbl`
 -- AUTO_INCREMENT for table `product_tbl`
 --
 ALTER TABLE `product_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `subcategory_tbl`
@@ -373,16 +399,16 @@ ALTER TABLE `subcategory_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT for table `sub_subcategory_tbl`
+-- AUTO_INCREMENT for table `sub_subcategory`
 --
-ALTER TABLE `sub_subcategory_tbl`
+ALTER TABLE `sub_subcategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users_tbl`
 --
 ALTER TABLE `users_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wishlist_tbl`
