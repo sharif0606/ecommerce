@@ -16,7 +16,7 @@
 <!------ Include the above in your HEAD tag ---------->
 <div class="card">
 	<div class="row">
-		<aside class="col-sm-5 border-right">
+		<aside class="col-sm-12 border-right">
 <article class="gallery-wrap"> 
 		<div class="img-big-wrap">
 		</div> 
@@ -24,7 +24,7 @@
 		<!-- slider-product.// -->
 			<div class="img-small-wrap">
 				<div class="item-gallery">
-					<img src="assets/images/p1.png" class="mt-5 pt-5 ml-5 pl-5">
+					<img src="assets/images/kamiz.jpg" class="mt-5 pt-5 ml-5 pl-5">
 			    </div>
 		
 		    </div> 
@@ -34,7 +34,7 @@
 		</aside>
 			<aside class="col-sm-7">
 <article class="card-body p-5">
-	<h3 class="title mb-3 text-primary">Man's  Shirt</h3>
+	<h3 class="title mb-3 text-primary">Kamiz</h3>
 
 <p class="price-detail-wrap"> 
 	<span class="price h3 text-warning"> 
