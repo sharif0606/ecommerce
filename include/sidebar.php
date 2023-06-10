@@ -28,7 +28,7 @@
                            <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="registar.php">Registar</a>
+                           <a class="nav-link" href="register.php">Registar</a>
                         </li>
                         
                         <form class="d-flex">
@@ -49,3 +49,15 @@
             </div>
          </header>
          <!-- end header section -->
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Add the following JavaScript code -->
+<script>
+$(document).ready(function() {
+  $('.dropdown-toggle').click(function(e) {
+    e.preventDefault();
+    $(this).parent().find('.dropdown-menu').toggle();
+  });
+});
+</script>
