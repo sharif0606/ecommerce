@@ -131,7 +131,7 @@
     <div class="cart-item">
       <div class="row">
         <div class="col-md-3">
-          <img src="product3.jpg" alt="Product 3" class="item-image">
+          <img src="assets/images/p1.png" alt="Product 3" class="item-image">
         </div>
         <div class="col-md-9 item-details">
           <h4 class="item-title">Product 3</h4>
@@ -150,7 +150,7 @@
   <div id="popup" class="popup">
     <div class="popup-content">
       <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h2>Checkout</h2>
+      <!-- <h2><a href="Check_Out.php">Checkout</a></h2> -->
       <!-- Add your checkout form here -->
       <p>This is the pop-up content.</p>
     </div>

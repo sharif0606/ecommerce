@@ -34,7 +34,7 @@
                            <a href="product_details.php" class="option2">
                            Buy Now
                            </a>
-                           <a href="product_details.php" class="option2">
+                           <a href="cart.php" class="option2">
                           Add to Cart
                            </a>
                         </div>
@@ -60,6 +60,9 @@
                             
                            <a href="product_details.php" class="option2">
                            Buy Now
+                           </a>
+                           <a href="product_details.php" class="option2">
+                          Add to Cart
                            </a>
                         </div>
                      </div>
