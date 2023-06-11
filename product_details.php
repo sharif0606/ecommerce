@@ -3,131 +3,155 @@
       <div class="hero_area">
          <?php require_once('include/sidebar.php') ?>
       </div>
-      <!-- inner page section -->
-      
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="assets/css/stylecart.css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
-        </script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-		</script>
 
+<!doctype html>
+    <html>
+         <head>
+            <meta charset='utf-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <title>Snippet - GoSNippets</title>
+            <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
+            <link href='' rel='stylesheet'>
+            <style>body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f5f5f5
+}
 
-<!------ Include the above in your HEAD tag ---------->
-<div class="card">
-	<div class="row">
-		<aside class="col-sm-12 border-right">
-<article class="gallery-wrap"> 
-		<div class="img-big-wrap">
-		</div> 
+.hedding {
+    font-size: 20px;
+    color: #ab8181`;
+}
 
-		<!-- slider-product.// -->
-			<div class="img-small-wrap">
-				<div class="item-gallery">
-					<img src="assets/images/kamiz.jpg" class="mt-5 pt-5 ml-5 pl-5">
-			    </div>
-		
-		    </div> 
-		<!-- slider-nav.// -->
-</article>
-<!-- gallery-wrap .end// -->
-		</aside>
-			<aside class="col-sm-7">
-<article class="card-body p-5">
-	<h3 class="title mb-3 text-primary">Kamiz</h3>
+.main-section {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 5%);
+}
 
-<p class="price-detail-wrap"> 
-	<span class="price h3 text-warning"> 
-		<span class="currency">US $</span><span class="num">12</span>
-	 </span> 
-	<span>/per peach</span> 
-</p> <!-- price-detail-wrap .// -->
+.left-side-product-box img {
+    width: 100%;
+}
 
-<dl class="item-property">
-  <dt>Description</dt>
-  			<dd>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus, repudiandae illo nostrum iure labore vero cumque facilis voluptatum similique beatae adipisci rerum error dignissimos tempora iusto nulla veniam libero!
+.left-side-product-box .sub-img img {
+    margin-top: 5px;
+    width: 83px;
+    height: 100px;
+}
 
-			</p>
-		</dd>
-</dl>
+.right-side-pro-detail span {
+    font-size: 15px;
+}
 
-		<dl class="param param-feature">
-			<dt>Code#</dt>
-			<dd>1461</dd>
-		</dl>  
+.right-side-pro-detail p {
+    font-size: 25px;
+    color: #a1a1a1;
+}
 
-<!-- item-property-hor .// -->
-		<dl class="param param-feature">
-			<dt>Color</dt>
-			<dd>Black and white</dd>
-		</dl> 
-<!-- item-property-hor .// -->
+.right-side-pro-detail .price-pro {
+    color: #E45641;
+}
 
-		<dl class="param param-feature">
-			<dt>Delivery</dt>
-			<dd>Russia, USA, and Europe</dd>
-		</dl>  
-<!-- item-property-hor .// -->
+.right-side-pro-detail .tag-section {
+    font-size: 18px;
+    color: #5D4C46;
+}
 
-<hr>
-	<div class="row">
-		<div class="col-sm-5">
-			<dl class="param param-inline">
-			  	<dt>Quantity: </dt>
-			  <dd>
-			  	<select class="form-control form-control-sm" 	style="width:70px;">
-						<option> 1 </option>
-						<option> 2 </option>
-						<option> 3 </option>
-			  	</select>
-			  </dd>
-			</dl>  <!-- item-property .// -->
-		</div> <!-- col.// -->
-		<div class="col-sm-7">
-			<dl class="param param-inline">
-				  <dt>Size: </dt>
-				  <dd>
-				  	<label class="form-check form-check-inline">
-					  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">SM</span>
-					</label>
+.pro-box-section .pro-box img {
+    width: 100%;
+    height: 200px;
+}
 
-					<label class="form-check form-check-inline">
-					  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">MD</span>
-					</label>
-
-					<label class="form-check form-check-inline">
-					  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">XXL</span>
-					</label>
-				  </dd>
-			</dl>  
-			<!-- item-property .// -->
-		</div> 
-		<!-- col.// -->
-	</div> 
-	<!-- row.// -->
-	<hr>
-	<a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-	<a href="#" class="btn btn-lg btn-primary text-uppercase"> <i class="">
-	</i> Add to cart </a>
-
-	<a href="product.php" class="btn btn-lg btn-primary text-uppercase"> <i class=" ">
-	</i> Choose another Product</a>
-</article> 
-<!-- card-body.// -->
-		</aside> 
-		<!-- col.// -->
-	</div> 
-	<!-- row.// -->
-</div> 
-<!-- card.// -->
-
-</div>
-<!--container.//-->
-<br> 
-      <!-- end product section -->
-      <!-- footer section -->
+@media (min-width:360px) and (max-width:640px) {
+    .pro-box-section .pro-box img {
+        height: auto;
+    }
+}</style>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+                                <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+                            </head>
+                            <body oncontextmenu='return false' class='snippet-body'>
+                            <div class="container">
+    <div class="col-lg-12 border p-3 main-section bg-white">
+         
+        <div class="row m-0">
+            <div class="col-lg-4 left-side-product-box pb-3 mt-5 pb-5">
+                <img src="assets/images/p1.png" class="border p-3">
+                 
+            </div>
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            
+                            <p class="m-0 p-0">Women's Velvet Dress</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="m-0 p-0 price-pro">Price: $30 <span class="text-success small">inStock</span></p>
+                            <hr class="p-0 m-0">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5>Product Detail</h5>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris.</span>
+                            <hr class="m-0 pt-2 mt-2">
+                        </div>
+                        <div class="col-lg-12">
+                            
+                            <p class="tag-section"><strong>Tag : </strong><a href="">Woman</a><a href="">,Man</a></p>
+                        </div>
+                        <div class="col-sm-7">
+                            <dl class="param param-inline">
+                                  <dt>Size: </dt>
+                                  <dd>
+                                      <label class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                      <span class="form-check-label">SM</span>
+                                    </label>
+                
+                                    <label class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                      <span class="form-check-label">MD</span>
+                                    </label>
+                
+                                    <label class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                      <span class="form-check-label">XXL</span>
+                                    </label>
+                                  </dd>
+                            </dl> 
+                            <dl class="param param-feature">
+                                <dt>Color</dt>
+                                <dd>Black and white</dd>
+                            </dl> 
+                    <!-- item-property-hor .// -->
+                    
+                            <dl class="param param-feature">
+                                <dt>Delivery</dt>
+                                <dd>Russia, USA, and Europe</dd>
+                            </dl>   
+                            <!-- item-property .// -->
+                        </div>
+                        <div class="col-lg-12">
+                            <h6>Quantity :</h6>
+                            <input type="number" class="form-control text-center w-100" value="1">
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <div class="row">
+                                <div class="col-lg-6 pb-2">
+                                    <a href="#" class="btn btn-danger w-100">Add To Cart</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="Check_Out.php" class="btn btn-success w-100">Check Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+<script type='text/javascript'></script>
 <?php require_once('include/footer.php') ?>

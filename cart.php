@@ -58,6 +58,41 @@
     .checkout-btn {
       margin-top: 20px;
     }
+    
+    /* Added styles for pop-up */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    
+    .popup-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    .close-btn {
+      color: #888;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -86,7 +121,7 @@
         </div>
         <div class="col-md-9 item-details">
           <h4 class="item-title">Product 2</h4>
-          <p class="item-price">Price: $39.99</p>
+          <p class="item-price">Price: $ 39.99</p>
           <p class="item-quantity">Quantity: 1</p>
           <p class="item-total">Total: $39.99</p>
         </div>
@@ -104,4 +139,35 @@
           <p class="item-quantity">Quantity: 3</p>
           <p class="item-total">Total: $89.97</p>
         </div>
-      </div
+      </div>
+    </div>
+
+    <!-- Add checkout button to trigger pop-up -->
+    <button class="checkout-btn" onclick="openPopup()">Checkout</button>
+  </div>
+
+  <!-- Pop-up -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Checkout</h2>
+      <!-- Add your checkout form here -->
+      <p>This is the pop-up content.</p>
+    </div>
+  </div>
+
+  <script>
+    // Open the pop-up
+    function openPopup() {
+      document.getElementById("popup").style.display = "block";
+    }
+
+    // Close the pop-up
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+
+
