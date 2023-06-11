@@ -8,9 +8,9 @@
                         <a href="#"><img width="210" src="assets/images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> NVIT, 2no Gate, Chattagram, Bangladesh.</p>
+                        <p><strong>PHONE NO:</strong> +88 018 654 3210</p>
+                        <p><strong>EMAIL:</strong> wdpfround54@gmail.com</p>
                       </div>
                    </div>
                </div>
@@ -71,9 +71,9 @@
       </footer>
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+         <p class="mx-auto">© 2023 All Rights Reserved By <a href="#">PHP and MYSQL</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            Distributed By <a href="#" target="_blank">Group Project</a>
          
          </p>
       </div>
