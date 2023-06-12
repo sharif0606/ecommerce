@@ -59,7 +59,7 @@
                     <div class="col-6 mb-3">
                       <p class="mb-0">Phone</p>
                       <div class="form-outline">
-                        <input type="tel" id="typePhone" value="+48 " class="form-control" />
+                        <input type="tel" id="typePhone" value="+88 " class="form-control" />
                       </div>
                     </div>
       
@@ -130,9 +130,13 @@
                     <div class="col-sm-4 mb-3">
                       <p class="mb-0">City</p>
                       <select class="form-select">
-                        <option value="1">New York</option>
-                        <option value="2">Moscow</option>
-                        <option value="3">Samarqand</option>
+                        <option value="1">Dhaka</option>
+                        <option value="2">Chattogram</option>
+                        <option value="3">Cumilla</option>
+                        <option value="3">Rajshahi</option>
+                        <option value="3">Sylet</option>
+                        <option value="3">Borishal</option>
+                        <option value="3">Rongpur</option>
                       </select>
                     </div>
       
