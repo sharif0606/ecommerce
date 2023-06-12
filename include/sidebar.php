@@ -52,8 +52,8 @@
                             <span class="d-none d-lg-inline-flex"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="my_profile.php" class="dropdown-item">My Profile</a>
+                            <a href=" setting.php" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
