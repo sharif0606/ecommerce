@@ -18,12 +18,12 @@
                         </div>
                     <form method="post" action="">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
+                            <label for="floatingInput"><h5>Email address :</h5></label>
+                                <input type="email" class="form-control" name="email" placeholder="name@example.com">                   
                         </div>
                         <div class="form-floating mb-4">
+                            <label for="floatingPassword"><h5>Password :</h5></label>
                             <input type="password" class="form-control" name="password" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
                         </div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
