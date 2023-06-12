@@ -3,16 +3,8 @@
       <div class="hero_area">
          <?php require_once('include/sidebar.php') ?>
       </div>
-
-<!doctype html>
-    <html>
-         <head>
-            <meta charset='utf-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1'>
-            <title>Snippet - GoSNippets</title>
-            <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
-            <link href='' rel='stylesheet'>
-            <style>body {
+<style>
+body {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #f5f5f5
 }
@@ -66,92 +58,89 @@
     .pro-box-section .pro-box img {
         height: auto;
     }
-}</style>
-                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-                                <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
-                            </head>
-                            <body oncontextmenu='return false' class='snippet-body'>
-                            <div class="container">
-    <div class="col-lg-12 border p-3 main-section bg-white">
-         
+}
+</style>
+<?php
+    $id=$_GET['id'];
+    $data=$mysqli->common_select_query("SELECT product_tbl.*, category_tbl.name as category,
+     sub_subcategory.name as subsubcategory, subcategory_tbl.name as subcategory,brand_tbl.name as brand FROM `product_tbl`
+                            join brand_tbl on brand_tbl.id=product_tbl.brand_id
+                            join category_tbl on category_tbl.id=product_tbl.category_id
+                            JOIN subcategory_tbl on subcategory_tbl.id=product_tbl.subcategory_id
+                            join sub_subcategory on sub_subcategory.id=product_tbl.sub_subcategory_id
+                            WHERE product_tbl.id=$id")['data'][0];
+?>
+<div class="container">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="">Home</a></li>
+        <?php if($data->category) { ?>
+        <li class="breadcrumb-item"><a href="#"><?= $data->category ?></a></li>
+        <?php } ?>
+        <?php if($data->subcategory) { ?>
+        <li class="breadcrumb-item"><a href="#"><?= $data->subcategory ?></a></li>
+        <?php } ?>
+        <?php if($data->subsubcategory) { ?>
+            <li class="breadcrumb-item active" aria-current="page"><?= $data->subsubcategory ?></li>
+        <?php } ?>
+    </ol>
+    </nav>
+    <div class="col-lg-12 bg-white">
         <div class="row m-0">
-            <div class="col-lg-4 left-side-product-box pb-3 mt-5 pb-5">
-                <img src="assets/images/p1.png" class="border p-3">
-                 
+            <div class="col-lg-4 left-side-product-box pb-3 mt-1 pb-5">
+                <img src="<?= $base_url?>upload/product/<?= $data->picture ?>" class="border p-3">
             </div>
             <div class="col-lg-8">
                 <div class="right-side-pro-detail border p-3 m-0">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <form action="add_to_cart.php" method="post">
+                            <div class="col-lg-12">
+                                
+                                <p class="m-0 p-0"><?= $data->name ?></p>
+                            </div>
+                            <div class="col-lg-12">
+                                <p class="m-0 p-0 price-pro">Price: BDT<?= $data->price ?> 
+                                <?php if($data->stock > 0){ ?>
+                                    <span class="text-success small">In Stock</span>
+                                <?php }else{ ?>
+                                    <span class="text-danger small">Out of Stock</span>
+                                <?php } ?>
+                                    
+                                </p>
+                                <hr class="p-0 m-0">
+                            </div>
+                            <div class="col-lg-12 pt-2">
+                                <h5>Product Detail</h5>
+                                <span><?= $data->details ?></span>
+                                <hr class="m-0 pt-2 mt-2">
+                            </div>
                             
-                            <p class="m-0 p-0">Women's Velvet Dress</p>
-                        </div>
-                        <div class="col-lg-12">
-                            <p class="m-0 p-0 price-pro">Price: $30 <span class="text-success small">inStock</span></p>
-                            <hr class="p-0 m-0">
-                        </div>
-                        <div class="col-lg-12 pt-2">
-                            <h5>Product Detail</h5>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris.</span>
-                            <hr class="m-0 pt-2 mt-2">
-                        </div>
-                        <div class="col-lg-12">
-                            
-                            <p class="tag-section"><strong>Tag : </strong><a href="">Woman</a><a href="">,Man</a></p>
-                        </div>
-                        <div class="col-sm-7">
-                            <dl class="param param-inline">
-                                  <dt>Size: </dt>
-                                  <dd>
-                                      <label class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                      <span class="form-check-label">SM</span>
-                                    </label>
-                
-                                    <label class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                      <span class="form-check-label">MD</span>
-                                    </label>
-                
-                                    <label class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                      <span class="form-check-label">XXL</span>
-                                    </label>
-                                  </dd>
-                            </dl> 
-                            <dl class="param param-feature">
-                                <dt>Color</dt>
-                                <dd>Black and white</dd>
-                            </dl> 
-                    <!-- item-property-hor .// -->
-                    
-                            <dl class="param param-feature">
-                                <dt>Delivery</dt>
-                                <dd>Russia, USA, and Europe</dd>
-                            </dl>   
-                            <!-- item-property .// -->
-                        </div>
-                        <div class="col-lg-12">
-                            <h6>Quantity :</h6>
-                            <input type="number" class="form-control text-center w-100" value="1">
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <div class="row">
-                                <div class="col-lg-6 pb-2">
-                                    <a href="#" class="btn btn-danger w-100">Add To Cart</a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <a href="Check_Out.php" class="btn btn-success w-100">Check Out</a>
+                            <div class="col-sm-7">
+                                <dl class="param param-feature">
+                                    <dd>Brand: <?= $data->brand ?></dd>
+                                </dl> 
+
+                            </div>
+                            <div class="col-lg-12">
+                                <h6>Quantity : <input type="number" name="qty" class="text-center w-25" value="1"></h6>
+                                
+                            </div>
+                            <div class="col-lg-12 mt-3">
+                                <div class="row">
+                                    <div class="col-lg-6 pb-2">
+                                        <button type="submit" class="btn btn-danger w-100">Add To Cart</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <input type="hidden" name="price" value="<?= $data->price ?>">
+                            <input type="hidden" name="id" value="<?= $data->id ?>">
+                            <input type="hidden" name="image" value="<?= $data->picture ?>">
+                            <input type="hidden" name="name" value="<?= $data->name ?>">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-         
-<script type='text/javascript'></script>
+    </div>
+
 <?php require_once('include/footer.php') ?>

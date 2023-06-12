@@ -1,7 +1,9 @@
 <?php
     $base_url="http://localhost/ecommerce/";
     require_once('class/crud.php');
+    require_once('class/cart.php');
     $mysqli=new crud;
+    $cart=new Cart;
 ?>
 <!DOCTYPE html>
 <html>

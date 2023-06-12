@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 05:54 AM
+-- Generation Time: Jun 12, 2023 at 08:28 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -99,6 +99,84 @@ INSERT INTO `category_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `status` tinyint(1) DEFAULT 1 COMMENT '1=Active | 0=Inactive'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1),
+(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `discount` decimal(10,2) DEFAULT 0.00,
+  `shipping` decimal(10,2) DEFAULT 0.00,
+  `grand_total` float(10,2) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `city` int(11) DEFAULT NULL,
+  `postal` varchar(255) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`) VALUES
+(1, 1, '0.00', '100.00', 65100.00, 'sadfj', 1, 'sadf', 'sadhifi', '2023-06-12 08:22:53', 'Pending'),
+(2, 2, '0.00', '150.00', 65150.00, 'kasjdk', 3, 'asdf', 'asdf', '2023-06-12 08:23:42', 'Pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_items`
+--
+
+CREATE TABLE `order_items` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `quantity` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`) VALUES
+(1, 2, 2, '4500.00', 2),
+(2, 2, 3, '25000.00', 2),
+(3, 2, 1, '1500.00', 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_tbl`
 --
 
@@ -154,42 +232,6 @@ INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `sub
 (25, 'Face Wash', '', 500, 2, 7, 1, 1, '0.00', '0.00', 0x31363836343730303532353935352e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (26, 'Skin Cleaner', '', 700, 2, 10, 1, 1, '0.00', '0.00', 0x31363836343730303839373534382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (27, 'Hair Shampo', '', 800, 2, 8, 1, 2, '0.00', '0.00', 0x31363836343730313839363438372e6a7067, '', NULL, NULL, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sales_tbl`
---
-
-CREATE TABLE `sales_tbl` (
-  `id` int(11) NOT NULL,
-  `full_name` varchar(255) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `shipping_id` smallint(5) NOT NULL,
-  `coupon_discount` float(4,2) NOT NULL,
-  `contact` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `post_code` varchar(255) NOT NULL,
-  `date` date NOT NULL,
-  `payment` varchar(20) NOT NULL,
-  `transaction_id` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sales_tbl`
---
-
-INSERT INTO `sales_tbl` (`id`, `full_name`, `user_id`, `shipping_id`, `coupon_discount`, `contact`, `address`, `post_code`, `date`, `payment`, `transaction_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(0, '', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(0, 'jjjj', 0, 0, 0.00, '', '', '', '0000-00-00', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -361,6 +403,26 @@ ALTER TABLE `category_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_id` (`customer_id`);
+
+--
+-- Indexes for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
 -- Indexes for table `product_tbl`
 --
 ALTER TABLE `product_tbl`
@@ -407,6 +469,24 @@ ALTER TABLE `category_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `product_tbl`
 --
 ALTER TABLE `product_tbl`
@@ -435,6 +515,22 @@ ALTER TABLE `users_tbl`
 --
 ALTER TABLE `wishlist_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

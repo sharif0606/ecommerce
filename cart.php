@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Shopping Cart </title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <style>
+<?php require_once('include/header.php') ?>
+<style>
     .cart-container {
       max-width: 800px;
       margin: 0 auto;
@@ -94,80 +90,44 @@
       cursor: pointer;
     }
   </style>
-</head>
-<body>
+   <body class="sub_page">
+      <div class="hero_area">
+         <?php require_once('include/sidebar.php') ?>
+      </div>
+
+
 
   <div class="cart-container">
     <h1 class="cart-header">Shopping Cart</h1>
-
-    <div class="cart-item">
-      <div class="row">
-        <div class="col-md-3">
-          <img src="product1.jpg" alt="Product 1" class="item-image">
-        </div>
-        <div class="col-md-9 item-details">
-          <h4 class="item-title">Product 1</h4>
-          <p class="item-price">Price: $49.99</p>
-          <p class="item-quantity">Quantity: 2</p>
-          <p class="item-total">Total: $99.98</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cart-item">
-      <div class="row">
-        <div class="col-md-3">
-          <img src="product2.jpg" alt="Product 2" class="item-image">
-        </div>
-        <div class="col-md-9 item-details">
-          <h4 class="item-title">Product 2</h4>
-          <p class="item-price">Price: $ 39.99</p>
-          <p class="item-quantity">Quantity: 1</p>
-          <p class="item-total">Total: $39.99</p>
+    <?php 
+      if($cart->total_items() > 0){ 
+        foreach($cart->contents() as $item){ 
+    ?>
+    <form action="update_cart.php" method="post">
+      <input type="hidden" name="rowid" value="<?= $item['rowid'] ?>">
+      <div class="cart-item">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="<?= $base_url?>upload/product/<?= $item['image'] ?>" alt="Product 1" class="item-image">
+          </div>
+          <div class="col-md-6 item-details">
+            <h4 class="item-title"><?= $item['name'] ?></h4>
+            <p class="item-price">Price: BDT <?= $item['price'] ?></p>
+            <p class="item-quantity">Quantity: <input type="number" class="w-25" name="qty" id="" value="<?= $item['qty'] ?>"></p>
+            <p class="item-total">Total: BDT <?= $item['subtotal'] ?></p>
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i></button>
+            <a href="remove_from_cart.php?rowid=<?= $item['rowid']?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="cart-item">
-      <div class="row">
-        <div class="col-md-3">
-          <img src="assets/images/p1.png" alt="Product 3" class="item-image">
-        </div>
-        <div class="col-md-9 item-details">
-          <h4 class="item-title">Product 3</h4>
-          <p class="item-price">Price: $29.99</p>
-          <p class="item-quantity">Quantity: 3</p>
-          <p class="item-total">Total: $89.97</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Add checkout button to trigger pop-up -->
-    <button class="checkout-btn" onclick="openPopup()">Checkout</button>
+    </form>
+<?php }?>
+<a class="btn btn-success" href="checkout.php">Checkout</a>
+<?php } ?>
   </div>
 
-  <!-- Pop-up -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <!-- <h2><a href="Check_Out.php">Checkout</a></h2> -->
-      <!-- Add your checkout form here -->
-      <p>This is the pop-up content.</p>
-    </div>
-  </div>
+  
 
-  <script>
-    // Open the pop-up
-    function openPopup() {
-      document.getElementById("popup").style.display = "block";
-    }
-
-    // Close the pop-up
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
-</body>
-</html>
-
-
+<?php require_once('include/footer.php') ?>
