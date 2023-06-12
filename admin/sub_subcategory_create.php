@@ -39,7 +39,7 @@
                 </form>
                 <?php
                     if($_POST){
-                        $rs=$mysqli->common_create('sub_subcategory_tbl',$_POST);
+                        $rs=$mysqli->common_create('sub_subcategory',$_POST);
                         if(!$rs['error']){
                         echo "<script>window.location='sub_subcategory_list.php'</script>";
                         }else{

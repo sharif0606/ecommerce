@@ -8,7 +8,7 @@
                 <h6 class="mb-4">Sub_subcategory Edit</h6>
                 <?php
                   $where['id']=$_GET['id'];
-                  $data=$mysqli->common_select_single('sub_subcategory_tbl','*',$where);
+                  $data=$mysqli->common_select_single('sub_subcategory','*',$where);
                  
                   if(!$data['error'])
                     $d=$data['data'];
@@ -50,7 +50,7 @@
                 </form>
                 <?php
                     if($_POST){
-                        $rs=$mysqli->common_update('sub_subcategory_tbl',$_POST,$where);
+                        $rs=$mysqli->common_update('sub_subcategory',$_POST,$where);
                         if(!$rs['error']){
                         echo "<script>window.location='sub_subcategory_list.php'</script>";
                         }else{
