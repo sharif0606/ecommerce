@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 08:26 AM
+-- Generation Time: Jun 12, 2023 at 05:54 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -144,7 +144,16 @@ INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `sub
 (15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '', NULL, NULL, NULL, NULL, NULL),
-(18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '', NULL, NULL, NULL, NULL, NULL);
+(18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(19, 'Fashion Bags', '', 0, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739353132393331372e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(20, 'Casual bag', '', 4500, 4, 15, 1, 4, '0.00', '0.00', 0x31363836333739353437323432322e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(21, 'Travel Bag', '', 1500, 4, 15, 1, 1, '0.00', '0.00', 0x31363836333739363335393233312e706e67, '', NULL, NULL, NULL, NULL, NULL),
+(22, 'Fashionable Shirt', '', 1500, 4, 15, 1, 7, '0.00', '0.00', 0x31363836333739373330373737362e706e67, '', NULL, NULL, NULL, NULL, NULL),
+(23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(24, 'T-Shirt', '', 1500, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739383230323531302e706e67, '', NULL, NULL, NULL, NULL, NULL),
+(25, 'Face Wash', '', 500, 2, 7, 1, 1, '0.00', '0.00', 0x31363836343730303532353935352e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(26, 'Skin Cleaner', '', 700, 2, 10, 1, 1, '0.00', '0.00', 0x31363836343730303839373534382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
+(27, 'Hair Shampo', '', 800, 2, 8, 1, 2, '0.00', '0.00', 0x31363836343730313839363438372e6a7067, '', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -221,7 +230,7 @@ INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `creat
 (15, 'Clothing', 4, NULL, NULL, NULL, NULL, NULL),
 (16, 'Shoes', 4, NULL, NULL, NULL, NULL, NULL),
 (17, 'Jewellery', 4, NULL, NULL, NULL, NULL, NULL),
-(18, 'Accessories', 4, NULL, NULL, NULL, NULL, NULL),
+(18, 'Health', 4, NULL, NULL, NULL, NULL, NULL),
 (19, 'Maternity Care', 5, NULL, NULL, NULL, NULL, NULL),
 (20, 'Baby & Personal Care', 5, NULL, NULL, NULL, NULL, NULL),
 (21, 'Baby Care & Gifts', 5, NULL, NULL, NULL, NULL, NULL),
@@ -238,7 +247,8 @@ INSERT INTO `subcategory_tbl` (`id`, `name`, `category_id`, `created_at`, `creat
 (32, 'Telivision', 8, NULL, NULL, NULL, NULL, NULL),
 (33, 'Air Condition', 8, NULL, NULL, NULL, NULL, NULL),
 (34, 'Fans', 8, NULL, NULL, NULL, NULL, NULL),
-(35, 'Cooling & Heating', 8, NULL, NULL, NULL, NULL, NULL);
+(35, 'Cooling & Heating', 8, NULL, NULL, NULL, NULL, NULL),
+(36, 'Baby Care', 5, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -273,7 +283,19 @@ INSERT INTO `sub_subcategory` (`id`, `name`, `category_id`, `subcategory_id`, `c
 (8, 'Face Wash & Cleansers', 2, 7, NULL, NULL, NULL, NULL, NULL),
 (9, 'Casual Shirts', 4, 15, NULL, NULL, NULL, NULL, NULL),
 (10, 'Casual Shirts', 4, 15, NULL, NULL, NULL, NULL, NULL),
-(11, 'Shirts', 1, 1, NULL, NULL, NULL, NULL, NULL);
+(11, 'Sarees', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(12, 'DELL', 8, 32, NULL, NULL, NULL, NULL, NULL),
+(13, 'Shampoo', 2, 10, NULL, NULL, NULL, NULL, NULL),
+(14, 'Gree', 8, 33, NULL, NULL, NULL, NULL, NULL),
+(15, 'LED', 8, 32, NULL, NULL, NULL, NULL, NULL),
+(16, 'Ceiling Fans', 8, 34, NULL, NULL, NULL, NULL, NULL),
+(17, 'Table Fan', 8, 34, NULL, NULL, NULL, NULL, NULL),
+(18, 'Heater', 8, 35, NULL, NULL, NULL, NULL, NULL),
+(19, 'Cooler', 8, 35, NULL, NULL, NULL, NULL, NULL),
+(20, 'Desktop', 7, 28, NULL, NULL, NULL, NULL, NULL),
+(21, 'Speaker', 7, 29, NULL, NULL, NULL, NULL, NULL),
+(22, 'Router', 7, 30, NULL, NULL, NULL, NULL, NULL),
+(23, 'Camera', 7, 31, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -303,9 +325,7 @@ CREATE TABLE `users_tbl` (
 --
 
 INSERT INTO `users_tbl` (`id`, `name`, `email`, `password`, `type`, `address`, `contact`, `gender`, `picture`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Kamal Uddin', 'kamal@yahoo.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL),
-(2, '', 'admin@gmail.com', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL),
-(3, '', 'admin@gmail.com', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
+(1, 'Safayet', 'admin@gmail.com', 'adcd7048512e64b48da55b027577886ee5a36350', '', '', '', '', '', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -390,25 +410,25 @@ ALTER TABLE `category_tbl`
 -- AUTO_INCREMENT for table `product_tbl`
 --
 ALTER TABLE `product_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `sub_subcategory`
 --
 ALTER TABLE `sub_subcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users_tbl`
 --
 ALTER TABLE `users_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wishlist_tbl`
