@@ -30,18 +30,34 @@
                         </div>
                     <form method="post" action="">
                         <div class="form-floating mb-3">
-                            <label for="floatingText"><h5>Full Name :</h5></label>
-                            <input type="text" class="form-control" name="name" placeholder="jhondoe">                          
+                            <label for="floatingText"><h5>First Name :</h5></label>
+                            <input type="text" class="form-control" name="first_name" placeholder="jhon">                          
                         </div>
+
+                        <div class="form-floating mb-3">
+                            <label for="floatingText"><h5>Last Name :</h5></label>
+                            <input type="text" class="form-control" name="last_name" placeholder="Doe">                          
+                        </div>
+
                         <div class="form-floating mb-3">
                             <label for="email"><h5>Email address :</h5></label>
                             <input type="email" class="form-control" name="email" placeholder="name@example.com">
                         </div>
+
+                        <div class="form-group">
+                            <label for="phone"><h5>Phone Number</h5></label>
+                            <input type="tel" class="form-control" id="phone" name="phone"placeholder="Enter your phone number">
+                        </div>
+
                         <div class="form-floating mb-4">
                             <label for="password"><h5>Password :</h5></label>
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                       
+
+                        <div class="form-group">
+                            <label for="address"><h5>Address</h5></label>
+                            <input type="text" class="form-control" id="address" name="address"placeholder="Enter your address">
+                        </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
                         <p class="text-center mb-0">Already have an Account? <a href="login.php">Sign In</a></p>
                     </form>
@@ -50,7 +66,7 @@
                             $pass=trim($_POST['password']);
                             $_POST['password']=sha1(md5($_POST['password']));
                             
-                            $rs=$mysqli->common_create('users_tbl',$_POST);
+                            $rs=$mysqli->common_create('customers',$_POST);
                             if(!$rs['error']){
                                 echo "<script>window.location='login.php'</script>";
                             }else{
