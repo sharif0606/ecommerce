@@ -117,6 +117,20 @@
             return $return;
         }
 
+        public function common_query($sql){
+            $result="";
+            $error=false;
+            
+            $rs=$this->connection->query($sql);
+            if($rs){
+                $result=$this->connection->affected_rows;
+            }else{
+                $error=$this->connection->error;
+            }
+            $return = array('data'=>$result,'error'=>$error);
+            return $return;
+        }
+
         public function common_delete($table,$condition){
             $result="";
             $error=false;

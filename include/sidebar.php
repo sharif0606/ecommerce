@@ -23,7 +23,7 @@
                         </li>
                         
                         <form class="d-flex">
-                           <button class="btn btn-outline-dark" type="submit">
+                           <button class="btn btn-outline-dark" type="button">
                               <a href="cart.php"><i class="bi-cart-fill me-1"></i>
                               Cart</a>
                               <span class="badge bg-dark text-white ms-1 rounded-pill">

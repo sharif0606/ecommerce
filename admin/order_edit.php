@@ -20,12 +20,26 @@
                 <form method="post" action="">
                     <div class="mb-3">
                         <label for="name" class="form-label">Order</label>
-                        <input type="text" value="<?= $d->name ?>"class="form-control" id="name" name="name">
+                        <select name="status" class="form-control" id="">
+                            <option <?= $d->status=="Pending"?"selected":"" ?> value="Pending">Pending</option>
+                            <option <?= $d->status=="Completed"?"selected":"" ?> value="Completed">Completed</option>
+                            <option <?= $d->status=="Cancelled"?"selected":"" ?> value="Cancelled">Cancelled</option>
+                        </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
                 <?php
                     if($_POST){
+                        if($_POST['status']=="Completed"){
+                            $whereitm['order_id']=$_GET['id'];
+                            $dataitm=$mysqli->common_select('order_items','*',$whereitm);
+                            if(!$dataitm['error']){
+                                foreach($dataitm['data'] as $itm){
+                                    $query=$mysqli->common_query("update product_tbl set stock=stock - ".$itm->quantity." where id='".$itm->product_id."' ");
+                                    
+                                }
+                            }
+                        }
                         $rs=$mysqli->common_update('orders',$_POST,$where);
                         if(!$rs['error']){
                         echo "<script>window.location='order_list.php'</script>";
