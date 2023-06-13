@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 08:28 AM
+-- Generation Time: Jun 13, 2023 at 06:06 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -112,16 +112,22 @@ CREATE TABLE `customers` (
   `address` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `status` tinyint(1) DEFAULT 1 COMMENT '1=Active | 0=Inactive'
+  `status` tinyint(1) DEFAULT 1 COMMENT '1=Active | 0=Inactive',
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1),
-(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1);
+INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`, `deleted_at`) VALUES
+(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1, NULL),
+(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1, NULL),
+(3, 'kaiser', 'Khan', 's.akter.2043@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(4, 'jasim', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(5, 'kaiser', 'Mojahed', 'afmfuad96@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(6, 'kaiser', 'Hamid', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(7, 'gearbdffabfdb', 'Mojahed', '', '+88 fbfdbdfb', NULL, '2no Gate', NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -140,16 +146,22 @@ CREATE TABLE `orders` (
   `postal` varchar(255) DEFAULT NULL,
   `message` text DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending'
+  `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending',
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`) VALUES
-(1, 1, '0.00', '100.00', 65100.00, 'sadfj', 1, 'sadf', 'sadhifi', '2023-06-12 08:22:53', 'Pending'),
-(2, 2, '0.00', '150.00', 65150.00, 'kasjdk', 3, 'asdf', 'asdf', '2023-06-12 08:23:42', 'Pending');
+INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
+(1, 1, '0.00', '100.00', 65100.00, 'sadfj', 1, 'sadf', 'sadhifi', '2023-06-12 08:22:53', 'Pending', NULL),
+(2, 2, '0.00', '150.00', 65150.00, 'kasjdk', 3, 'asdf', 'asdf', '2023-06-12 08:23:42', 'Pending', NULL),
+(3, 3, '0.00', '100.00', 3100.00, '2no Gate', 1, '1234', 'Hello', '2023-06-12 08:45:45', 'Pending', NULL),
+(6, 4, '0.00', '100.00', 29600.00, '2no Gate', 1, '1234', 'sc aC', '2023-06-12 09:17:36', 'Pending', NULL),
+(8, 5, '0.00', '100.00', 3100.00, '2no Gate', 1, '1234', 'kbasaaHv Z', '2023-06-12 09:43:27', 'Pending', NULL),
+(9, 6, '0.00', '150.00', 3150.00, '2no Gate', 3, '1234', 'Hello', '2023-06-12 09:59:18', 'Pending', NULL),
+(10, 7, '0.00', '150.00', 1650.00, '2no Gate', 2, '1234', 'gdafngdsflkjbdfbkndskb', '2023-06-12 10:06:19', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -162,17 +174,24 @@ CREATE TABLE `order_items` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `quantity` int(5) NOT NULL
+  `quantity` int(5) NOT NULL,
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`) VALUES
-(1, 2, 2, '4500.00', 2),
-(2, 2, 3, '25000.00', 2),
-(3, 2, 1, '1500.00', 4);
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
+(1, 2, 2, '4500.00', 2, NULL),
+(2, 2, 3, '25000.00', 2, NULL),
+(3, 2, 1, '1500.00', 4, NULL),
+(4, 3, 1, '1500.00', 2, NULL),
+(5, 6, 3, '25000.00', 1, NULL),
+(6, 6, 2, '4500.00', 1, NULL),
+(7, 8, 1, '1500.00', 2, NULL),
+(8, 9, 1, '1500.00', 2, NULL),
+(9, 10, 1, '1500.00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -223,9 +242,7 @@ INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `sub
 (16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '', NULL, NULL, NULL, NULL, NULL),
 (18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(19, 'Fashion Bags', '', 0, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739353132393331372e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (20, 'Casual bag', '', 4500, 4, 15, 1, 4, '0.00', '0.00', 0x31363836333739353437323432322e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(21, 'Travel Bag', '', 1500, 4, 15, 1, 1, '0.00', '0.00', 0x31363836333739363335393233312e706e67, '', NULL, NULL, NULL, NULL, NULL),
 (22, 'Fashionable Shirt', '', 1500, 4, 15, 1, 7, '0.00', '0.00', 0x31363836333739373330373737362e706e67, '', NULL, NULL, NULL, NULL, NULL),
 (23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
 (24, 'T-Shirt', '', 1500, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739383230323531302e706e67, '', NULL, NULL, NULL, NULL, NULL),
@@ -472,19 +489,19 @@ ALTER TABLE `category_tbl`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
