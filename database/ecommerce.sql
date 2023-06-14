@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2023 at 08:27 AM
+-- Generation Time: Jun 14, 2023 at 08:22 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -165,7 +165,7 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
 (1, 8, '0.00', '100.00', 8100.00, 'lalkhan', 1, '1234', 'ewEFGGG', '2023-06-13 19:57:41', 'Completed', NULL),
-(2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Pending', NULL),
+(2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Completed', NULL),
 (3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Completed', NULL),
 (4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Completed', NULL),
 (5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Pending', NULL),
