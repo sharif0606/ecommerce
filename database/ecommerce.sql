@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 08:28 AM
+-- Generation Time: Jun 13, 2023 at 08:27 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -112,16 +112,31 @@ CREATE TABLE `customers` (
   `address` text DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `status` tinyint(1) DEFAULT 1 COMMENT '1=Active | 0=Inactive'
+  `status` tinyint(1) DEFAULT 1 COMMENT '1=Active | 0=Inactive',
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1),
-(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1);
+INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`, `deleted_at`) VALUES
+(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1, NULL),
+(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1, NULL),
+(3, 'kaiser', 'Khan', 's.akter.2043@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(4, 'jasim', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(5, 'kaiser', 'Mojahed', 'afmfuad96@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(6, 'kaiser', 'Hamid', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(7, 'gearbdffabfdb', 'Mojahed', '', '+88 fbfdbdfb', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(8, 'Safayet', 'Azad', 'admin@gmail.com', '+88 12345678', NULL, 'lalkhan', NULL, NULL, 1, NULL),
+(9, 'Rahat', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
+(10, 'Safayet', 'Azad', 'admin@gmail.com', '+88 12345676', NULL, 'lalkhan', NULL, NULL, 1, NULL),
+(11, 'Rahat', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
+(12, 'mahi', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'Wasa', NULL, NULL, 1, NULL),
+(13, 'Safayet', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'Wasa', NULL, NULL, 1, NULL),
+(14, 'Rahat', 'Azad', 'admin@gmail.com', '+88 12345676', NULL, 'lalkhan', NULL, NULL, 1, NULL),
+(15, 'bv bv  vb ', 'khan', 'admin@gmail.com', '+88   11111', NULL, 'lalkhan', NULL, NULL, 1, NULL),
+(16, 'Safayet', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -140,16 +155,24 @@ CREATE TABLE `orders` (
   `postal` varchar(255) DEFAULT NULL,
   `message` text DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending'
+  `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending',
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`) VALUES
-(1, 1, '0.00', '100.00', 65100.00, 'sadfj', 1, 'sadf', 'sadhifi', '2023-06-12 08:22:53', 'Pending'),
-(2, 2, '0.00', '150.00', 65150.00, 'kasjdk', 3, 'asdf', 'asdf', '2023-06-12 08:23:42', 'Pending');
+INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
+(1, 8, '0.00', '100.00', 8100.00, 'lalkhan', 1, '1234', 'ewEFGGG', '2023-06-13 19:57:41', 'Completed', NULL),
+(2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Pending', NULL),
+(3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Completed', NULL),
+(4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Completed', NULL),
+(5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Pending', NULL),
+(6, 13, '0.00', '100.00', 4600.00, 'Wasa', 1, 'ger', 'gerge', '2023-06-13 07:21:09', 'Completed', NULL),
+(7, 14, '0.00', '150.00', 950.00, 'lalkhan', 3, ' xcc', 'xv', '2023-06-13 07:22:00', 'Completed', NULL),
+(8, 15, '0.00', '150.00', 950.00, 'lalkhan', 3, '1234', 'nbmn', '2023-06-13 07:28:04', 'Completed', NULL),
+(9, 16, '0.00', '150.00', 850.00, 'jamal khan', 2, '1234', 'vnnvn', '2023-06-13 07:31:30', 'Completed', NULL);
 
 -- --------------------------------------------------------
 
@@ -162,17 +185,20 @@ CREATE TABLE `order_items` (
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `quantity` int(5) NOT NULL
+  `quantity` int(5) NOT NULL,
+  `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`) VALUES
-(1, 2, 2, '4500.00', 2),
-(2, 2, 3, '25000.00', 2),
-(3, 2, 1, '1500.00', 4);
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
+(1, 5, 7, '500.00', 1, NULL),
+(2, 6, 4, '4500.00', 1, NULL),
+(3, 7, 27, '800.00', 1, NULL),
+(4, 8, 27, '800.00', 1, NULL),
+(5, 9, 26, '700.00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -205,33 +231,31 @@ CREATE TABLE `product_tbl` (
 --
 
 INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `subcategory_id`, `sub_subcategory_id`, `brand_id`, `vat`, `discount`, `picture`, `stock`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'DESIGNER SHALWAR KAMEEZ', '', 1500, 1, 1, 1, 1, '10.00', '15.00', 0x31363836313230383739313338322e6a7067, '7', NULL, NULL, NULL, NULL, NULL),
-(2, 'Rayon Cotton embroidery Kameez', '', 4500, 1, 1, 1, 1, '0.00', '0.00', 0x31363836313231303139333739312e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
+(1, 'DESIGNER SHALWAR KAMEEZ', '', 1500, 1, 1, 1, 1, '10.00', '15.00', 0x31363836313230383739313338322e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
+(2, 'Rayon Cotton embroidery Kameez', '', 4500, 1, 1, 1, 1, '0.00', '0.00', 0x31363836313231303139333739312e6a7067, '5', NULL, NULL, NULL, NULL, NULL),
 (3, 'South Indian Saree', '', 25000, 1, 1, 2, 7, '0.00', '0.00', 0x31363836313231313831313237322e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
-(4, 'Bangladeshi Sarees', '', 4500, 1, 1, 2, 1, '0.00', '0.00', 0x31363836313231323137323936332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
-(5, 'Hizab', '', 1000, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343139383237352e6a706567, '10', NULL, NULL, NULL, NULL, NULL),
+(4, 'Bangladeshi Sarees', '', 4500, 1, 1, 2, 1, '0.00', '0.00', 0x31363836313231323137323936332e6a7067, '9', NULL, NULL, NULL, NULL, NULL),
+(5, 'Hizab', '', 1000, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343139383237352e6a706567, '9', NULL, NULL, NULL, NULL, NULL),
 (6, 'Stylish Hijab', '', 1500, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343534363835362e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
 (7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '10', NULL, NULL, NULL, NULL, NULL),
 (8, 'Stylish T-shirt', '', 600, 1, 1, 7, 1, '0.00', '0.00', 0x31363836313231393337373732332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
-(9, 'Shoe', '', 4500, 1, 4, 9, 10, '0.00', '0.00', 0x31363836313232313732353330362e6a706567, '', NULL, NULL, NULL, NULL, NULL),
+(9, 'Shoe', '', 4500, 1, 4, 9, 10, '0.00', '0.00', 0x31363836313232313732353330362e6a706567, '6', NULL, NULL, NULL, NULL, NULL),
 (10, 'Party Shoe', '', 5000, 1, 4, 9, 7, '0.00', '0.00', 0x31363836313232323230393336392e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
 (11, 'Fashion Bags', '', 4500, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363030393130382e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
-(12, 'Casual bag', '', 5000, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363239393736322e6a7067, '40', NULL, NULL, NULL, NULL, NULL),
+(12, 'Casual bag', '', 5000, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363239393736322e6a7067, '37', NULL, NULL, NULL, NULL, NULL),
 (13, 'Women Watach', '', 2000, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233303837353633392e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (14, 'Fashionable Women Watch', '', 2500, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233313232363039352e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
-(15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '', NULL, NULL, NULL, NULL, NULL),
-(18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(19, 'Fashion Bags', '', 0, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739353132393331372e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(20, 'Casual bag', '', 4500, 4, 15, 1, 4, '0.00', '0.00', 0x31363836333739353437323432322e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(21, 'Travel Bag', '', 1500, 4, 15, 1, 1, '0.00', '0.00', 0x31363836333739363335393233312e706e67, '', NULL, NULL, NULL, NULL, NULL),
-(22, 'Fashionable Shirt', '', 1500, 4, 15, 1, 7, '0.00', '0.00', 0x31363836333739373330373737362e706e67, '', NULL, NULL, NULL, NULL, NULL),
-(23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(24, 'T-Shirt', '', 1500, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739383230323531302e706e67, '', NULL, NULL, NULL, NULL, NULL),
-(25, 'Face Wash', '', 500, 2, 7, 1, 1, '0.00', '0.00', 0x31363836343730303532353935352e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(26, 'Skin Cleaner', '', 700, 2, 10, 1, 1, '0.00', '0.00', 0x31363836343730303839373534382e6a7067, '', NULL, NULL, NULL, NULL, NULL),
-(27, 'Hair Shampo', '', 800, 2, 8, 1, 2, '0.00', '0.00', 0x31363836343730313839363438372e6a7067, '', NULL, NULL, NULL, NULL, NULL);
+(15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
+(16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '9', NULL, NULL, NULL, NULL, NULL),
+(18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '8', NULL, NULL, NULL, NULL, NULL),
+(20, 'Casual bag', '', 4500, 4, 15, 1, 4, '0.00', '0.00', 0x31363836333739353437323432322e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
+(22, 'Fashionable Shirt', '', 1500, 4, 15, 1, 7, '0.00', '0.00', 0x31363836333739373330373737362e706e67, '9', NULL, NULL, NULL, NULL, NULL),
+(23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '8', NULL, NULL, NULL, NULL, NULL),
+(24, 'T-Shirt', '', 1500, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739383230323531302e706e67, '7', NULL, NULL, NULL, NULL, NULL),
+(25, 'Face Wash', '', 500, 2, 7, 1, 1, '0.00', '0.00', 0x31363836343730303532353935352e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
+(26, 'Skin Cleaner', '', 700, 2, 10, 1, 1, '0.00', '0.00', 0x31363836343730303839373534382e6a7067, '4', NULL, NULL, NULL, NULL, NULL),
+(27, 'Hair Shampo', '', 800, 2, 8, 1, 2, '0.00', '0.00', 0x31363836343730313839363438372e6a7067, '1', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -472,19 +496,19 @@ ALTER TABLE `category_tbl`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
