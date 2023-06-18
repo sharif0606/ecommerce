@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2023 at 06:31 AM
+-- Generation Time: Jun 18, 2023 at 06:38 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -168,9 +168,9 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
 (1, 8, '0.00', '100.00', 8100.00, 'lalkhan', 1, '1234', 'ewEFGGG', '2023-06-13 19:57:41', 'Completed', NULL),
 (2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Completed', NULL),
-(3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Completed', NULL),
-(4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Completed', NULL),
-(5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Pending', NULL),
+(3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Pending', NULL),
+(4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Cancelled', NULL),
+(5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Completed', NULL),
 (6, 13, '0.00', '100.00', 4600.00, 'Wasa', 1, 'ger', 'gerge', '2023-06-13 07:21:09', 'Completed', NULL),
 (7, 14, '0.00', '150.00', 950.00, 'lalkhan', 3, ' xcc', 'xv', '2023-06-13 07:22:00', 'Completed', NULL),
 (8, 15, '0.00', '150.00', 950.00, 'lalkhan', 3, '1234', 'nbmn', '2023-06-13 07:28:04', 'Completed', NULL),
@@ -243,7 +243,7 @@ INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `sub
 (4, 'Bangladeshi Sarees', '', 4500, 1, 1, 2, 1, '0.00', '0.00', 0x31363836313231323137323936332e6a7067, '9', NULL, NULL, NULL, NULL, NULL),
 (5, 'Hizab', '', 1000, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343139383237352e6a706567, '9', NULL, NULL, NULL, NULL, NULL),
 (6, 'Stylish Hijab', '', 1500, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343534363835362e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
-(7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '8', NULL, NULL, NULL, NULL, NULL),
+(7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '3', NULL, NULL, NULL, NULL, NULL),
 (8, 'Stylish T-shirt', '', 600, 1, 1, 7, 1, '0.00', '0.00', 0x31363836313231393337373732332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (9, 'Shoe', '', 4500, 1, 4, 9, 10, '0.00', '0.00', 0x31363836313232313732353330362e6a706567, '6', NULL, NULL, NULL, NULL, NULL),
 (10, 'Party Shoe', '', 5000, 1, 4, 9, 7, '0.00', '0.00', 0x31363836313232323230393336392e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
