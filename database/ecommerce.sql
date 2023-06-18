@@ -163,16 +163,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
-(1, 8, '0.00', '100.00', 8100.00, 'lalkhan', 1, '1234', 'ewEFGGG', '2023-06-13 19:57:41', 'Completed', NULL),
-(2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Pending', NULL),
-(3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Completed', NULL),
-(4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Completed', NULL),
-(5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Pending', NULL),
-(6, 13, '0.00', '100.00', 4600.00, 'Wasa', 1, 'ger', 'gerge', '2023-06-13 07:21:09', 'Completed', NULL),
-(7, 14, '0.00', '150.00', 950.00, 'lalkhan', 3, ' xcc', 'xv', '2023-06-13 07:22:00', 'Completed', NULL),
-(8, 15, '0.00', '150.00', 950.00, 'lalkhan', 3, '1234', 'nbmn', '2023-06-13 07:28:04', 'Completed', NULL),
-(9, 16, '0.00', '150.00', 850.00, 'jamal khan', 2, '1234', 'vnnvn', '2023-06-13 07:31:30', 'Completed', NULL);
+INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`) VALUES
+(1, 1, '0.00', '100.00', 65100.00, 'sadfj', 1, 'sadf', 'sadhifi', '2023-06-12 08:22:53', 'Pending'),
+(2, 2, '0.00', '150.00', 65150.00, 'kasjdk', 3, 'asdf', 'asdf', '2023-06-12 08:23:42', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -193,6 +186,12 @@ CREATE TABLE `order_items` (
 -- Dumping data for table `order_items`
 --
 
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
+(1, 5, 7, '500.00', 1, NULL),
+(2, 6, 4, '4500.00', 1, NULL),
+(3, 7, 27, '800.00', 1, NULL),
+(4, 8, 27, '800.00', 1, NULL),
+(5, 9, 26, '700.00', 1, NULL);
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
 (1, 5, 7, '500.00', 1, NULL),
 (2, 6, 4, '4500.00', 1, NULL),

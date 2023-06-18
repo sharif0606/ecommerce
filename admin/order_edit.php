@@ -41,6 +41,7 @@
                             }
                         }
                         $rs=$mysqli->common_update('orders',$_POST,$where);
+                        $rs=$mysqli->common_update('order_items',$_POST,$where);
                         if(!$rs['error']){
                         echo "<script>window.location='order_list.php'</script>";
                         }else{
