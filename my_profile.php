@@ -22,7 +22,7 @@
     <h1 class="mt-4">My Profile</h1>
 
     <?php
-    // Simulating user data retrieval from database
+     
     $firstName = "John";
     $lastName = "Doe";
     $email = "johndoe@example.com";
@@ -38,7 +38,7 @@
     <form>
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" value="<?php echo $firs_tName; ?>" readonly>
+        <input type="text" class="form-control" id="firstName" value="<?php echo $firstName; ?>" readonly>
       </div>
       <div class="form-group">
         <label for="lastName">Last Name</label>
@@ -52,7 +52,7 @@
         <label for="address">Address</label>
         <textarea class="form-control" id="address" rows="3" readonly><?php echo $address; ?></textarea>
       </div>
-      <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+      <a href="" class="btn btn-primary">Edit Profile</a>
     </form>
 
     <h2>Order History</h2>

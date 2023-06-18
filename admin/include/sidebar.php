@@ -2,7 +2,7 @@
  <div class="sidebar pe-4 pb-3">
     <nav class="navbar bg-light navbar-light">
         <a href="index.html" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>AZEEMAH</h3>
+            <h3 class="text-success"><i class="fa fa-truck"></i>AZEEMAH</h3>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
 
@@ -14,49 +14,49 @@
             <a href="<?= $base_url?>dashboard.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
            
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-list-alt"></i>Category</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="category_list.php" class="dropdown-item">List</a>
                     <a href="category_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Subcatecory</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-list-alt"></i>Subcatecory</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="subcategory_list.php" class="dropdown-item">List</a>
                     <a href="subcategory_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Sub Sub Catecory</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-list-alt"></i>Sub Sub Catecory</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="sub_subcategory_list.php" class="dropdown-item">List</a>
                     <a href="sub_subcategory_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Brand</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-bold"></i>Brand</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="brand_list.php" class="dropdown-item">List</a>
                     <a href="brand_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Product</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fab fa-product-hunt"></i>Product</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="product_list.php" class="dropdown-item">List</a>
                     <a href="product_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Sales</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fab fa-fedex"></i>Sales</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="sales_list.php" class="dropdown-item">List</a>
                     <a href="sales_create.php" class="dropdown-item">Add New</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Shipping</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-truck"></i>Shipping</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="shipping_list.php" class="dropdown-item">List</a>
                     <a href="shipping_create.php" class="dropdown-item">Add New</a>
@@ -77,7 +77,7 @@
                 </div>
             </div> -->
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Orders</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fab fa-first-order"></i>Orders</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="order_list.php" class="dropdown-item">List</a>
                     <!-- <a href="order_edit.php" class="dropdown-item">Edit</a> -->

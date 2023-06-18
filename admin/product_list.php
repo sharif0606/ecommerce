@@ -1,16 +1,16 @@
 <?php require_once('include/header.php') ?>
 <?php require_once('include/sidebar.php') ?>
 
-<div class="container-fluid pt-4 px-4">
+<div class="container-fluid pt-4 px-4 shadow p-3 mb-5 bg-body-tertiary rounded">
     <div class="row g-4">
         <div class="col-sm-12">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Product List</h6>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
+                <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">SL</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Brand</th>
                                 <th scope="col">Category</th>
@@ -36,17 +36,17 @@
                                 foreach($data['data'] as $d){
                         ?>
                             <tr>
-                                <td><?= $d->id ?></td>
-                                <td><?= $d->name ?></td>
-                                <td><?= $d->brand ?></td>
-                                <td><?= $d->category ?></td>
-                                <td><?= $d->subcategory ?></td>
-                                <td><?= $d->subsubcategory ?></td>
-                                <td><?= $d->price ?></td>
-                                <td><?= $d->vat ?></td>
-                                <td><?= $d->discount ?></td>
-                                <td><?= $d->picture ?></td>
-                                <td><?= $d->stock ?></td>
+                                <td class="table-info"><?= $d->id ?></td>
+                                <td class="table-success"><?= $d->name ?></td>
+                                <td class="table-warning"><?= $d->brand ?></td>
+                                <td class="table-danger"><?= $d->category ?></td>
+                                <td class="table-primary"><?= $d->subcategory ?></td>
+                                <td class="table-info"><?= $d->subsubcategory ?></td>
+                                <td class="table-light"><?= $d->price ?></td>
+                                <td class="table-gray"><?= $d->vat ?></td>
+                                <td class="table-success"><?= $d->discount ?></td>
+                                <td class="table-info"><?= $d->picture ?></td>
+                                <td class="table-primary"><?= $d->stock ?></td>
                                 <td>
                                     <a href="product_edit.php?id=<?= $d->id ?>">
                                         <i class="fa fa-edit"></i> Edit

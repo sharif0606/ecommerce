@@ -58,40 +58,31 @@
                   </div>
 
       
-                  <hr class="my-4" />
+                  <hr class="my-4"/>
       
                   <h5 class="card-title mb-3">Shipping info</h5>
-      
-      
-                  <div class="row">
-                    <div class="col-sm-8 mb-3">
-                      <p class="mb-0">Address</p>
-                      <div class="form-outline">
-                        <input type="text" name="address" id="typeText" placeholder="Type here" class="form-control" />
-                      </div>
-                    </div>
-      
-                    <div class="col-sm-4 mb-3">
-                      <p class="mb-0">City</p>
-                      <select name="city" required class="form-control" onchange="shipping_cost(this.value)">
-                        <option value="">Select City</option>
-                        <option value="1">Chattogram</option>
-                        <option value="2">Dhaka</option>
-                        <option value="3">Cumilla</option>
-                        <option value="3">Rajshahi</option>
-                        <option value="3">Sylet</option>
-                        <option value="3">Borishal</option>
-                        <option value="3">Rongpur</option>
-                      </select>
-                    </div>
-      
-                    <div class="col-sm-4 col-6 mb-3">
-                      <p class="mb-0">Postal code</p>
-                      <div class="form-outline">
-                        <input name="postal" type="text" id="typeText" class="form-control" />
-                      </div>
+                <div class="row">
+                  <div class="col-sm-8 mb-3">
+                    <p class="mb-0">Address</p>
+                    <div class="form-outline">
+                      <input type="text" name ="address" id="typeText" placeholder="Type here" class="form-contorl">
                     </div>
                   </div>
+                </div>
+      
+                  <div class="mb-3">
+                        <label for="City" class="form-label">City:</label>
+                        <select class="form-control" id="" name="city_name">
+                            <?php
+                                $data=$mysqli->common_select('shipping_city');
+                                if(!$data['error']){
+                                    foreach($data['data'] as $dt){
+                            ?>
+                                <option value="<?= $dt->city_name ?>"><?= $dt->city_name ?></option>
+                                <option value="<?= $dt->shipping_charge ?>"><?= $dt->shipping_charge ?></option>
+                            <?php } } ?>
+                        </select>
+                    </div>
       
                   <div class="mb-3">
                     <p class="mb-0">Message to seller</p>

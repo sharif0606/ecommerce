@@ -1,14 +1,14 @@
 <?php require_once('include/header.php') ?>
 <?php require_once('include/sidebar.php') ?>
 
-<div class="container-fluid pt-4 px-4">
+<div class="container-fluid pt-4 px-4 shadow p-3 mb-5 bg-body-tertiary rounded">
     <div class="row g-4">
-        <div class="col-sm-12 col-xl-6">
+        <div class="col-sm-12 col-xl-12">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Sub Sub Category List</h6>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
+                <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Category</th>
@@ -27,10 +27,10 @@
                                 foreach($data['data'] as $d){
                         ?>
                             <tr>
-                                <th><?= $d->id ?></th>
-                                <th><?= $d->category ?></th>
-                                <th><?= $d->subcategory ?></th>
-                                <th><?= $d->name ?></th>
+                                <th class="table-info"><?= $d->id ?></th>
+                                <th class="table-warning"><?= $d->category ?></th>
+                                <th class="table-success"><?= $d->subcategory ?></th>
+                                <th class="table-primary"><?= $d->name ?></th>
                                 <th>
                                     <a href="sub_subcategory_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
 
