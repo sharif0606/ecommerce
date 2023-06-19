@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2023 at 06:38 AM
+-- Generation Time: Jun 19, 2023 at 05:20 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -138,7 +138,14 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `pas
 (15, 'bv bv  vb ', 'khan', 'admin@gmail.com', '+88   11111', NULL, 'lalkhan', NULL, NULL, 1, NULL),
 (16, 'Safayet', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
 (17, 'yyy', 'yyyf', 'isdbstudent@gmail.com', '+88 5555', NULL, 'casc', NULL, NULL, 1, NULL),
-(18, 'jasim', 'Uddin', 'iksakil2@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL);
+(18, 'jasim', 'Uddin', 'iksakil2@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(19, 'Fuad Vai', '', 'isdbstudent@gmail.com', '+88 12365498', NULL, 'golisthan', NULL, NULL, 1, NULL),
+(20, 'kaiser', 'Mojahed', 'admin@gmail.com', '+88 12365498', 'adcd7048512e64b48da55b027577886ee5a36350', '2no Gate', NULL, NULL, 1, NULL),
+(21, 'kaiser', 'Mojahed', 'admin@gmail.com', '+88 12365498', 'adcd7048512e64b48da55b027577886ee5a36350', '2no Gate', NULL, NULL, 1, NULL),
+(22, 'jasim', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '', NULL, NULL, 1, NULL),
+(23, 'Safayet', 'Azad', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(24, 'kaiser', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
+(25, 'Md', 'Mojahed', 'admin@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -176,7 +183,12 @@ INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`
 (8, 15, '0.00', '150.00', 950.00, 'lalkhan', 3, '1234', 'nbmn', '2023-06-13 07:28:04', 'Completed', NULL),
 (9, 16, '0.00', '150.00', 850.00, 'jamal khan', 2, '1234', 'vnnvn', '2023-06-13 07:31:30', 'Completed', NULL),
 (10, 17, '0.00', '150.00', 650.00, 'casc', 3, 'casc', 'hhhhh', '2023-06-15 05:17:23', 'Completed', NULL),
-(11, 18, '0.00', '100.00', 13600.00, '2no Gate', 1, '1234', 'Hello', '2023-06-18 05:57:49', 'Completed', NULL);
+(11, 18, '0.00', '100.00', 13600.00, '2no Gate', 1, '1234', 'Hello', '2023-06-18 05:57:49', 'Completed', NULL),
+(12, 19, '0.00', '150.00', 3150.00, 'golisthan', 2, '1234', 'hello', '2023-06-18 06:58:49', 'Cancelled', NULL),
+(13, 22, '0.00', '0.00', 0.00, '', 0, '', 'k', '2023-06-18 09:02:21', 'Pending', NULL),
+(14, 23, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'Hello', '2023-06-18 09:11:32', 'Completed', NULL),
+(15, 24, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'fdfdsbdsfb', '2023-06-18 11:42:08', 'Pending', NULL),
+(16, 25, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'Hello', '2023-06-18 11:43:50', 'Completed', NULL);
 
 -- --------------------------------------------------------
 
@@ -204,7 +216,13 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, 
 (4, 8, 27, '800.00', 1, NULL),
 (5, 9, 26, '700.00', 1, NULL),
 (6, 10, 7, '500.00', 1, NULL),
-(7, 11, 2, '4500.00', 3, NULL);
+(7, 11, 2, '4500.00', 3, NULL),
+(8, 12, 15, '1500.00', 2, NULL),
+(9, 13, 2, '4500.00', 2, NULL),
+(10, 13, 1, '1500.00', 2, NULL),
+(11, 14, 2, '4500.00', 3, NULL),
+(12, 15, 1, '15000.00', 3, NULL),
+(13, 16, 1, '15000.00', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -237,13 +255,13 @@ CREATE TABLE `product_tbl` (
 --
 
 INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `subcategory_id`, `sub_subcategory_id`, `brand_id`, `vat`, `discount`, `picture`, `stock`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'DESIGNER SHALWAR KAMEEZ', '', 1500, 1, 1, 1, 1, '10.00', '15.00', 0x31363836313230383739313338322e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
-(2, 'Rayon Cotton embroidery Kameez', '', 4500, 1, 1, 1, 1, '0.00', '0.00', 0x31363836313231303139333739312e6a7067, '2', NULL, NULL, NULL, NULL, NULL),
+(1, 'DESIGNER SHALWAR KAMEEZ', '', 15000, 1, 1, 1, 1, '10.00', '15.00', 0x31363836313230383739313338322e6a7067, '18', NULL, NULL, NULL, NULL, NULL),
+(2, 'Rayon Cotton embroidery Kameez', '', 4500, 1, 1, 1, 1, '0.00', '0.00', 0x31363836313231303139333739312e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
 (3, 'South Indian Saree', '', 25000, 1, 1, 2, 7, '0.00', '0.00', 0x31363836313231313831313237322e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (4, 'Bangladeshi Sarees', '', 4500, 1, 1, 2, 1, '0.00', '0.00', 0x31363836313231323137323936332e6a7067, '9', NULL, NULL, NULL, NULL, NULL),
 (5, 'Hizab', '', 1000, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343139383237352e6a706567, '9', NULL, NULL, NULL, NULL, NULL),
 (6, 'Stylish Hijab', '', 1500, 1, 1, 6, 1, '0.00', '0.00', 0x31363836313231343534363835362e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
-(7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '3', NULL, NULL, NULL, NULL, NULL),
+(7, 'T-Shirt', '', 500, 1, 3, 7, 4, '0.00', '0.00', 0x31363836313231383530333136332e6a706567, '10', NULL, NULL, NULL, NULL, NULL),
 (8, 'Stylish T-shirt', '', 600, 1, 1, 7, 1, '0.00', '0.00', 0x31363836313231393337373732332e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (9, 'Shoe', '', 4500, 1, 4, 9, 10, '0.00', '0.00', 0x31363836313232313732353330362e6a706567, '6', NULL, NULL, NULL, NULL, NULL),
 (10, 'Party Shoe', '', 5000, 1, 4, 9, 7, '0.00', '0.00', 0x31363836313232323230393336392e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
@@ -251,17 +269,45 @@ INSERT INTO `product_tbl` (`id`, `name`, `details`, `price`, `category_id`, `sub
 (12, 'Casual bag', '', 5000, 1, 5, 1, 1, '0.00', '0.00', 0x31363836313232363239393736322e6a7067, '37', NULL, NULL, NULL, NULL, NULL),
 (13, 'Women Watach', '', 2000, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233303837353633392e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (14, 'Fashionable Women Watch', '', 2500, 1, 6, 1, 10, '0.00', '0.00', 0x31363836313233313232363039352e6a7067, '30', NULL, NULL, NULL, NULL, NULL),
-(15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
+(15, 'Casual Watch', '', 1500, 3, 13, 1, 10, '0.00', '0.00', 0x31363836333735393639313237362e6a7067, '2', NULL, NULL, NULL, NULL, NULL),
 (16, 'Fashionable Watch', '', 5000, 4, 18, 1, 1, '0.00', '0.00', 0x31363836333736303334363239302e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (17, 'Fashionable Shoe', '', 4500, 4, 16, 1, 7, '0.00', '0.00', 0x31363836333736303835333730352e706e67, '9', NULL, NULL, NULL, NULL, NULL),
 (18, 'Footware', '', 500, 4, 16, 1, 1, '0.00', '0.00', 0x31363836333736313232313435382e6a7067, '8', NULL, NULL, NULL, NULL, NULL),
 (20, 'Casual bag', '', 4500, 4, 15, 1, 4, '0.00', '0.00', 0x31363836333739353437323432322e6a7067, '10', NULL, NULL, NULL, NULL, NULL),
 (22, 'Fashionable Shirt', '', 1500, 4, 15, 1, 7, '0.00', '0.00', 0x31363836333739373330373737362e706e67, '9', NULL, NULL, NULL, NULL, NULL),
-(23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '8', NULL, NULL, NULL, NULL, NULL),
+(23, 'Stylish Shirt', '', 5000, 4, 15, 1, 8, '0.00', '0.00', 0x31363836333739373635333735302e6a7067, '20', NULL, NULL, NULL, NULL, NULL),
 (24, 'T-Shirt', '', 1500, 4, 15, 1, 10, '0.00', '0.00', 0x31363836333739383230323531302e706e67, '7', NULL, NULL, NULL, NULL, NULL),
 (25, 'Face Wash', '', 500, 2, 7, 1, 1, '0.00', '0.00', 0x31363836343730303532353935352e6a7067, '6', NULL, NULL, NULL, NULL, NULL),
 (26, 'Skin Cleaner', '', 700, 2, 10, 1, 1, '0.00', '0.00', 0x31363836343730303839373534382e6a7067, '4', NULL, NULL, NULL, NULL, NULL),
 (27, 'Hair Shampo', '', 800, 2, 8, 1, 2, '0.00', '0.00', 0x31363836343730313839363438372e6a7067, '1', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shipping_city`
+--
+
+CREATE TABLE `shipping_city` (
+  `id` int(11) NOT NULL,
+  `city_name` varchar(255) NOT NULL,
+  `shipping_charge` int(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `updated_by` varchar(255) NOT NULL,
+  `deleted_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `shipping_city`
+--
+
+INSERT INTO `shipping_city` (`id`, `city_name`, `shipping_charge`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Dhaka', 200, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(2, 'Chittagong', 150, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(3, 'Feni', 350, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(4, 'Khulna', 500, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(5, 'Rajshahi', 300, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -459,6 +505,12 @@ ALTER TABLE `product_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shipping_city`
+--
+ALTER TABLE `shipping_city`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `subcategory_tbl`
 --
 ALTER TABLE `subcategory_tbl`
@@ -502,25 +554,31 @@ ALTER TABLE `category_tbl`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
 --
 ALTER TABLE `product_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `shipping_city`
+--
+ALTER TABLE `shipping_city`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `subcategory_tbl`
