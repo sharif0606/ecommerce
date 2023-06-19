@@ -83,7 +83,27 @@
       <script src="<?= $base_url ?>assets/js/popper.min.js"></script>
       <!-- bootstrap js -->
       <script src="<?= $base_url ?>assets/js/bootstrap.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
       <!-- custom js -->
       <script src="<?= $base_url ?>assets/js/custom.js"></script>
+      <script>
+         function whshlist(product_id){
+            $.ajax({
+              dataType: "json",
+              url: "add_wishlist.php",
+              data: {product_id:product_id},
+              success: function(d){
+               
+                if(d.type==1)
+                  toastr.success(d.message)
+                else
+                  toastr.error(d.message)
+              },error:function(e){
+               
+              }
+            });
+         }
+      </script>
    </body>
 </html>

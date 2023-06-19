@@ -22,59 +22,64 @@
 
         <!-- Sign Up Start -->
         <div class="container-fluid">
-            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-8">
-                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="row h-100 align-items-top justify-content-center">
+                <div class="col-12 col-sm-10">
+                    <div class="bg-light rounded my-2 mx-2">
+                        <div class="d-flex align-items-top justify-content-between mb-3">
                             <h3>Sign Up</h3>
                         </div>
-                    <form method="post" action="">
-                        <div class="form-floating mb-3">
-                            <label for="floatingText"><h5>First Name :</h5></label>
-                            <input type="text" class="form-control" name="first_name" placeholder="jhon">                          
-                        </div>
+                        <form method="post" action="">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <label for="floatingText"><h5>First Name :</h5></label>
+                                        <input type="text" class="form-control" name="first_name" placeholder="jhon">                          
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <label for="floatingText"><h5>Last Name :</h5></label>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Doe">                          
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-floating mb-3">
+                                        <label for="address"><h5>Address</h5></label>
+                                        <input type="text" class="form-control" id="address" name="address"placeholder="Enter your address">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <label for="email"><h5>Email address :</h5></label>
+                                        <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-4">
+                                        <label for="password"><h5>Password :</h5></label>
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="form-floating mb-3">
-                            <label for="floatingText"><h5>Last Name :</h5></label>
-                            <input type="text" class="form-control" name="last_name" placeholder="Doe">                          
-                        </div>
 
-                        <div class="form-floating mb-3">
-                            <label for="email"><h5>Email address :</h5></label>
-                            <input type="email" class="form-control" name="email" placeholder="name@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone"><h5>Phone Number</h5></label>
-                            <input type="tel" class="form-control" id="phone" name="phone"placeholder="Enter your phone number">
-                        </div>
-
-                        <div class="form-floating mb-4">
-                            <label for="password"><h5>Password :</h5></label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address"><h5>Address</h5></label>
-                            <input type="text" class="form-control" id="address" name="address"placeholder="Enter your address">
-                        </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
-                        <p class="text-center mb-0">Already have an Account? <a href="login.php">Sign In</a></p>
-                    </form>
-                    <?php
-                        if($_POST){
-                            $pass=trim($_POST['password']);
-                            $_POST['password']=sha1(md5($_POST['password']));
-                            
-                            $rs=$mysqli->common_create('customers',$_POST);
-                            if(!$rs['error']){
-                                echo "<script>window.location='login.php'</script>";
-                            }else{
-                                echo $rs['error'];
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                            <p class="text-center mb-0">Already have an Account? <a href="login.php">Sign In</a></p>
+                        </form>
+                        <?php
+                            if($_POST){
+                                $pass=trim($_POST['password']);
+                                $_POST['password']=sha1(md5($_POST['password']));
+                                
+                                $rs=$mysqli->common_create('customers',$_POST);
+                                if(!$rs['error']){
+                                    echo "<script>window.location='login.php'</script>";
+                                }else{
+                                    echo $rs['error'];
+                                }
                             }
-                        }
 
-                    ?>
+                        ?>
                     </div>
                 </div>
             </div>

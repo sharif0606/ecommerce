@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 05:20 AM
+-- Generation Time: Jun 19, 2023 at 09:52 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -99,6 +99,32 @@ INSERT INTO `category_tbl` (`id`, `name`, `created_at`, `created_by`, `updated_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `coupon`
+--
+
+CREATE TABLE `coupon` (
+  `id` int(11) NOT NULL,
+  `coupon_code` varchar(255) NOT NULL,
+  `discount_type` int(11) NOT NULL COMMENT '0 fixed 1 percent',
+  `discount_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `description` text DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `no_of_coupon` int(11) NOT NULL DEFAULT 0,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `coupon`
+--
+
+INSERT INTO `coupon` (`id`, `coupon_code`, `discount_type`, `discount_amount`, `description`, `start_date`, `end_date`, `no_of_coupon`, `deleted_at`) VALUES
+(1, '101', 0, '500.00', 'asdf', '2023-06-14', '2023-06-20', 10, NULL),
+(2, '102', 1, '5.00', 'asdf', '2023-06-14', '2023-06-19', 5, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customers`
 --
 
@@ -121,31 +147,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`, `deleted_at`) VALUES
-(1, 'Noman', 'Hossain', 'noman@gmail.com', '+885241545', NULL, 'sadfj', NULL, NULL, 1, NULL),
-(2, 'Noman', 'Hossain', 'kamal@yahoo.com', '+88 4234', NULL, 'kasjdk', NULL, NULL, 1, NULL),
-(3, 'kaiser', 'Khan', 's.akter.2043@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(4, 'jasim', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(5, 'kaiser', 'Mojahed', 'afmfuad96@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(6, 'kaiser', 'Hamid', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(7, 'gearbdffabfdb', 'Mojahed', '', '+88 fbfdbdfb', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(8, 'Safayet', 'Azad', 'admin@gmail.com', '+88 12345678', NULL, 'lalkhan', NULL, NULL, 1, NULL),
-(9, 'Rahat', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
-(10, 'Safayet', 'Azad', 'admin@gmail.com', '+88 12345676', NULL, 'lalkhan', NULL, NULL, 1, NULL),
-(11, 'Rahat', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
-(12, 'mahi', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'Wasa', NULL, NULL, 1, NULL),
-(13, 'Safayet', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'Wasa', NULL, NULL, 1, NULL),
-(14, 'Rahat', 'Azad', 'admin@gmail.com', '+88 12345676', NULL, 'lalkhan', NULL, NULL, 1, NULL),
-(15, 'bv bv  vb ', 'khan', 'admin@gmail.com', '+88   11111', NULL, 'lalkhan', NULL, NULL, 1, NULL),
-(16, 'Safayet', 'khan', 'admin@gmail.com', '+88 12345676', NULL, 'jamal khan', NULL, NULL, 1, NULL),
-(17, 'yyy', 'yyyf', 'isdbstudent@gmail.com', '+88 5555', NULL, 'casc', NULL, NULL, 1, NULL),
-(18, 'jasim', 'Uddin', 'iksakil2@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(19, 'Fuad Vai', '', 'isdbstudent@gmail.com', '+88 12365498', NULL, 'golisthan', NULL, NULL, 1, NULL),
-(20, 'kaiser', 'Mojahed', 'admin@gmail.com', '+88 12365498', 'adcd7048512e64b48da55b027577886ee5a36350', '2no Gate', NULL, NULL, 1, NULL),
-(21, 'kaiser', 'Mojahed', 'admin@gmail.com', '+88 12365498', 'adcd7048512e64b48da55b027577886ee5a36350', '2no Gate', NULL, NULL, 1, NULL),
-(22, 'jasim', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '', NULL, NULL, 1, NULL),
-(23, 'Safayet', 'Azad', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(24, 'kaiser', 'Mojahed', 'isdbstudent@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL),
-(25, 'Md', 'Mojahed', 'admin@gmail.com', '+88 12365498', NULL, '2no Gate', NULL, NULL, 1, NULL);
+(1, 'Noman', 'Hossain', 'noman@gmail.com', NULL, 'adcd7048512e64b48da55b027577886ee5a36350', 'kasjdk', NULL, NULL, 1, NULL),
+(2, '', '', '', '+88 ', NULL, '', NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -156,9 +159,11 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `pas
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
+  `sub_total` decimal(10,2) NOT NULL,
   `discount` decimal(10,2) DEFAULT 0.00,
   `shipping` decimal(10,2) DEFAULT 0.00,
   `grand_total` float(10,2) NOT NULL,
+  `coupon_code` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `city` int(11) DEFAULT NULL,
   `postal` varchar(255) DEFAULT NULL,
@@ -172,23 +177,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `discount`, `shipping`, `grand_total`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
-(1, 8, '0.00', '100.00', 8100.00, 'lalkhan', 1, '1234', 'ewEFGGG', '2023-06-13 19:57:41', 'Completed', NULL),
-(2, 9, '0.00', '150.00', 9150.00, 'jamal khan', 2, '234', 'dscdcsd', '2023-06-13 19:58:47', 'Completed', NULL),
-(3, 10, '0.00', '100.00', 7600.00, 'lalkhan', 1, '1234', 'zzCZC', '2023-06-13 20:14:02', 'Pending', NULL),
-(4, 11, '0.00', '150.00', 1150.00, 'jamal khan', 2, '1234', '  xc', '2023-06-13 20:15:35', 'Cancelled', NULL),
-(5, 12, '0.00', '100.00', 600.00, 'Wasa', 1, '1234', 'regrsgreg', '2023-06-13 07:19:59', 'Completed', NULL),
-(6, 13, '0.00', '100.00', 4600.00, 'Wasa', 1, 'ger', 'gerge', '2023-06-13 07:21:09', 'Completed', NULL),
-(7, 14, '0.00', '150.00', 950.00, 'lalkhan', 3, ' xcc', 'xv', '2023-06-13 07:22:00', 'Completed', NULL),
-(8, 15, '0.00', '150.00', 950.00, 'lalkhan', 3, '1234', 'nbmn', '2023-06-13 07:28:04', 'Completed', NULL),
-(9, 16, '0.00', '150.00', 850.00, 'jamal khan', 2, '1234', 'vnnvn', '2023-06-13 07:31:30', 'Completed', NULL),
-(10, 17, '0.00', '150.00', 650.00, 'casc', 3, 'casc', 'hhhhh', '2023-06-15 05:17:23', 'Completed', NULL),
-(11, 18, '0.00', '100.00', 13600.00, '2no Gate', 1, '1234', 'Hello', '2023-06-18 05:57:49', 'Completed', NULL),
-(12, 19, '0.00', '150.00', 3150.00, 'golisthan', 2, '1234', 'hello', '2023-06-18 06:58:49', 'Cancelled', NULL),
-(13, 22, '0.00', '0.00', 0.00, '', 0, '', 'k', '2023-06-18 09:02:21', 'Pending', NULL),
-(14, 23, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'Hello', '2023-06-18 09:11:32', 'Completed', NULL),
-(15, 24, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'fdfdsbdsfb', '2023-06-18 11:42:08', 'Pending', NULL),
-(16, 25, '0.00', '0.00', 0.00, '2no Gate', 0, '', 'Hello', '2023-06-18 11:43:50', 'Completed', NULL);
+INSERT INTO `orders` (`id`, `customer_id`, `sub_total`, `discount`, `shipping`, `grand_total`, `coupon_code`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
+(1, 1, '0.00', '0.00', '0.00', 0.00, NULL, '', 0, '', '', '2023-06-19 07:13:48', 'Pending', NULL),
+(2, 1, '19500.00', '500.00', '200.00', 19200.00, '101', 'This is address', 1, '', 'asdf', '2023-06-19 08:48:52', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -210,19 +201,10 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
-(1, 5, 7, '500.00', 1, NULL),
-(2, 6, 4, '4500.00', 1, NULL),
-(3, 7, 27, '800.00', 1, NULL),
-(4, 8, 27, '800.00', 1, NULL),
-(5, 9, 26, '700.00', 1, NULL),
-(6, 10, 7, '500.00', 1, NULL),
-(7, 11, 2, '4500.00', 3, NULL),
-(8, 12, 15, '1500.00', 2, NULL),
-(9, 13, 2, '4500.00', 2, NULL),
-(10, 13, 1, '1500.00', 2, NULL),
-(11, 14, 2, '4500.00', 3, NULL),
-(12, 15, 1, '15000.00', 3, NULL),
-(13, 16, 1, '15000.00', 2, NULL);
+(1, 1, 9, '4500.00', 2, NULL),
+(2, 1, 1, '15000.00', 2, NULL),
+(3, 2, 17, '4500.00', 1, NULL),
+(4, 2, 1, '15000.00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -463,6 +445,15 @@ CREATE TABLE `wishlist_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `wishlist_tbl`
+--
+
+INSERT INTO `wishlist_tbl` (`id`, `product_id`, `user_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(9, 2, 1, NULL, NULL, NULL, NULL, NULL),
+(10, 3, 1, NULL, NULL, NULL, NULL, NULL),
+(11, 1, 1, NULL, NULL, NULL, NULL, NULL);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -479,10 +470,18 @@ ALTER TABLE `category_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `coupon`
+--
+ALTER TABLE `coupon`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `couponecode` (`coupon_code`);
+
+--
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `orders`
@@ -551,22 +550,28 @@ ALTER TABLE `category_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `coupon`
+--
+ALTER TABLE `coupon`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
@@ -602,7 +607,7 @@ ALTER TABLE `users_tbl`
 -- AUTO_INCREMENT for table `wishlist_tbl`
 --
 ALTER TABLE `wishlist_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

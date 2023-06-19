@@ -18,6 +18,7 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Catagory</label>
                                 <select class="form-control" onchange="select_sub_cat(this.value)" id="category_id" name="category_id">
+                                    <option value="">Select Category</option>
                                     <?php
                                         $data=$mysqli->common_select('category_tbl');
                                         if(!$data['error']){
@@ -32,6 +33,7 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Sub Catagory</label>
                                 <select class="form-control" onchange="select_subsub_cat(this.value)" id="subcategory_id" name="subcategory_id">
+                                    <option value="">Select Sub Category</option>
                                     <?php
                                         $data=$mysqli->common_select('subcategory_tbl');
                                         if(!$data['error']){
@@ -46,6 +48,7 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Sub Sub Catagory</label>
                                 <select class="form-control" id="sub_subcategory_id" name="sub_subcategory_id">
+                                    <option value="">Select Sub Sub Category</option>
                                     <?php
                                         $data=$mysqli->common_select('sub_subcategory');
                                         if(!$data['error']){

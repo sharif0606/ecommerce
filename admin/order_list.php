@@ -10,8 +10,7 @@
                 <table class="table table-bordered table-hover">
                         <thead class="table-dark">
                             <tr>
-                                
-                                <th scope="col">Customer_id</th>
+                                <th scope="col">Customer</th>
                                 <th scope="col">Discount</th>
                                 <th scope="col">Shipping</th>
                                 <th scope="col">Grand_total</th>

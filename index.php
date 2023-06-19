@@ -401,6 +401,8 @@
                <div class="option_container">
                   <div class="options">
                      
+                     <a href="javascript:void(0)" onclick="whshlist(<?= $d->id ?>)" class="option1">
+                        <i class="fa fa-heart"></i>
                      </a>
                      <a href="product_details.php?id=<?= $d->id ?>" class="option2">
                         Buy Now

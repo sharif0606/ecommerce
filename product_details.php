@@ -4,63 +4,66 @@
          <?php require_once('include/sidebar.php') ?>
       </div>
 <style>
-body {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: #f5f5f5
-}
-
-.hedding {
-    font-size: 20px;
-    color: #ab8181`;
-}
-
-.main-section {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 5%);
-}
-
-.left-side-product-box img {
-    width: 100%;
-}
-
-.left-side-product-box .sub-img img {
-    margin-top: 5px;
-    width: 83px;
-    height: 100px;
-}
-
-.right-side-pro-detail span {
-    font-size: 15px;
-}
-
-.right-side-pro-detail p {
-    font-size: 25px;
-    color: #a1a1a1;
-}
-
-.right-side-pro-detail .price-pro {
-    color: #E45641;
-}
-
-.right-side-pro-detail .tag-section {
-    font-size: 18px;
-    color: #5D4C46;
-}
-
-.pro-box-section .pro-box img {
-    width: 100%;
-    height: 200px;
-}
-
-@media (min-width:360px) and (max-width:640px) {
-    .pro-box-section .pro-box img {
-        height: auto;
+    body {
+        font-family: 'Roboto Condensed', sans-serif;
+        background-color: #f5f5f5
     }
-}
+
+    .hedding {
+        font-size: 20px;
+        color: #ab8181`;
+    }
+
+    .main-section {
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, 5%);
+    }
+
+    .left-side-product-box img {
+        width: 100%;
+    }
+
+    .left-side-product-box .sub-img img {
+        margin-top: 5px;
+        width: 83px;
+        height: 100px;
+    }
+
+    .right-side-pro-detail span {
+        font-size: 15px;
+    }
+
+    .right-side-pro-detail p {
+        font-size: 25px;
+        color: #a1a1a1;
+    }
+
+    .right-side-pro-detail .price-pro {
+        color: #E45641;
+    }
+
+    .right-side-pro-detail .tag-section {
+        font-size: 18px;
+        color: #5D4C46;
+    }
+
+    .pro-box-section .pro-box img {
+        width: 100%;
+        height: 200px;
+    }
+
+    @media (min-width:360px) and (max-width:640px) {
+        .pro-box-section .pro-box img {
+            height: auto;
+        }
+    }
 </style>
 <?php
+    if(!isset($_GET['id'])){
+        echo "<script>window.location='product.php'</script>";
+    }
     $id=$_GET['id'];
     $data=$mysqli->common_select_query("SELECT product_tbl.*, category_tbl.name as category,
      sub_subcategory.name as subsubcategory, subcategory_tbl.name as subcategory,brand_tbl.name as brand FROM `product_tbl`

@@ -1,4 +1,10 @@
 <?php require_once('include/header.php') ?>
+<?php
+  if(!isset($_SESSION['user'])){
+    echo "<script>window.location='login.php'</script>";
+    exit;
+  }
+?>
    <body class="sub_page">
       <div class="hero_area">
          <!-- header section strats -->
@@ -27,42 +33,10 @@
               <!-- Checkout -->
               <div class="card shadow-0 border">
                 <div class="p-4">
-                  <div class="row">
-                    <div class="col-6 mb-3">
-                      <p class="mb-0">First name</p>
-                      <div class="form-outline">
-                        <input type="text" name="first_name" id="typeText" placeholder="Type here" class="form-control" />
-                      </div>
-                    </div>
-      
-                    <div class="col-6">
-                      <p class="mb-0">Last name</p>
-                      <div class="form-outline">
-                        <input type="text" name="last_name" id="typeText" placeholder="Type here" class="form-control" />
-                      </div>
-                    </div>
-      
-                    <div class="col-6 mb-3">
-                      <p class="mb-0">Phone</p>
-                      <div class="form-outline">
-                        <input type="tel" name="phone" id="typePhone" value="+88 " class="form-control" />
-                      </div>
-                    </div>
-      
-                    <div class="col-6 mb-3">
-                      <p class="mb-0">Email</p>
-                      <div class="form-outline">
-                        <input type="email" name="email" id="typeEmail" placeholder="example@gmail.com" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-
-      
-                  <hr class="my-4"/>
       
                   <h5 class="card-title mb-3">Shipping info</h5>
                 <div class="row">
-                  <div class="col-sm-8 mb-3">
+                  <div class="col-sm-12 mb-3">
                     <p class="mb-0">Address</p>
                     <div class="form-outline">
                       <input type="text" name ="address" id="typeText" placeholder="Type here" class="form-contorl">
@@ -71,18 +45,18 @@
                 </div>
       
                   <div class="mb-3">
-                        <label for="City" class="form-label">City:</label>
-                        <select class="form-control" id="" name="city_name">
-                            <?php
-                                $data=$mysqli->common_select('shipping_city');
-                                if(!$data['error']){
-                                    foreach($data['data'] as $dt){
-                            ?>
-                                <option value="<?= $dt->city_name ?>"><?= $dt->city_name ?></option>
-                                <option value="<?= $dt->shipping_charge ?>"><?= $dt->shipping_charge ?></option>
-                            <?php } } ?>
-                        </select>
-                    </div>
+                    <label for="City" class="form-label">City:</label>
+                    <select onchange="shipping_cost(this)" required class="form-control" id="" name="city">
+                    <option data-charge="0" value="">Select City</option>
+                        <?php
+                            $data=$mysqli->common_select('shipping_city');
+                            if(!$data['error']){
+                                foreach($data['data'] as $dt){
+                        ?>
+                            <option data-charge="<?= $dt->shipping_charge ?>" value="<?= $dt->id ?>"><?= $dt->city_name ?></option>
+                        <?php } } ?>
+                    </select>
+                  </div>
       
                   <div class="mb-3">
                     <p class="mb-0">Message to seller</p>
@@ -105,10 +79,10 @@
                   <p class="mb-2">Total price:</p>
                   <p class="mb-2">BDT <?= $cart->total() ?></p>
                 </div>
-                <!-- <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between">
                   <p class="mb-2">Discount:</p>
-                  <p class="mb-2 text-danger">- BDT 0</p>
-                </div> -->
+                  <p class="mb-2 text-danger discountamt">- BDT 0.00</p>
+                </div>
                 <div class="d-flex justify-content-between">
                   <p class="mb-2">Shipping cost:</p>
                   <p class="mb-2 shippingcost">+ BDT 0.00</p>
@@ -118,11 +92,12 @@
                   <p class="mb-2">Total price:</p>
                   <p class="mb-2 fw-bold ptotal"><?= $cart->total() ?></p>
                 </div>
-                <!--       
+
                 <div class="input-group mt-3 mb-4">
-                  <input type="text" class="form-control border" name="" placeholder="Promo code" />
-                  <button class="btn btn-light text-primary border">Apply</button>
-                </div> -->
+                  <input type="text" id="promocode" name="coupon_code" class="form-control border" name="" placeholder="Promo code" />
+                  <button type="button" onclick="apply_coupon()" class="btn btn-light text-primary border">Apply</button>
+                </div>
+                <span class="text-danger" id="promomsg"></span>
       
                 <hr />
                 <h6 class="text-dark my-4">Items in cart</h6>
@@ -148,21 +123,16 @@
               </div>
             </div>
 
-            <input type="hidden" name="discount" id="discount" value="0">
-            <input type="hidden" name="shipping" id="shipping" value="0">
-            <input type="hidden" name="grand_total" id="grand_total" value="0">
+            <input type="text" name="discount" id="discount" value="0">
+            <input type="text" name="shipping" id="shipping" value="0">
+            <input type="text" name="grand_total" id="grand_total" value="0">
           </div>
 </form>
 <?php
  if($_POST){
-  $customer['first_name']=$_POST['first_name'];
-  $customer['last_name']=$_POST['last_name'];
-  $customer['email']=$_POST['email'];
-  $customer['phone']=$_POST['phone'];
-  $customer['address']=$_POST['address'];
-  $custsave=$mysqli->common_create('customers',$customer);
-  if(!$custsave['error']){
-    $orders['customer_id']=$custsave['data'];
+    $orders['customer_id']=$_SESSION['user']->id;
+    $orders['sub_total']=$cart->total();
+    $orders['coupon_code']=$_POST['coupon_code'];
     $orders['discount']=$_POST['discount'];
     $orders['shipping']=$_POST['shipping'];
     $orders['grand_total']=$_POST['grand_total'];
@@ -185,22 +155,48 @@
         echo "<script>window.location='index.php'</script>";
       }
     }
-  }
  }
 
 ?>
         </div>
       </section>
-      <?php require_once('include/footer.php') ?>
+<?php require_once('include/footer.php') ?>
       <script>
+        function apply_coupon(){
+          let promocode=$('#promocode').val();
+          $('#promomsg').html("");
+          if(promocode){
+            $.ajax({
+              dataType: "json",
+              url: "coupon_check.php",
+              data: {code:promocode},
+              success: function(d){
+                $("#discount").val(d.discount);
+                $(".discountamt").html(d.discounttype+" " + d.discount);
+                if(d.discount>0)
+                  toastr.success(d.message)
+                else
+                  toastr.error(d.message)
+                total_calculate();
+              }
+            });
+           
+          }else{
+            $('#promomsg').html("Promo Code Required");
+          }
+        }
         function shipping_cost(e){
-          if(e=="1")
-            ship=100;
-          else
-            ship=150;
-            $("#shipping").val(ship);
-            $("#grand_total").val((ship+<?= $cart->total() ?>));
-            $(".shippingcost").html("+ BDT "+ship);
-            $(".ptotal").html("BDT "+(ship+<?= $cart->total() ?>))
+          let ship=$(e).find(":selected").data("charge")?parseFloat($(e).find(":selected").data("charge")):0;
+          $("#shipping").val(ship);
+          $(".shippingcost").html("+ BDT "+ship);
+          total_calculate();
+        }
+        function total_calculate(){
+          let ship= $("#shipping").val()?parseFloat($("#shipping").val()):0;
+          let discount= $("#discount").val()?parseFloat($("#discount").val()):0;
+          let total= <?= $cart->total() ?>;
+          let totalamt=((total - discount) + ship)
+          $("#grand_total").val(totalamt);
+          $(".ptotal").html("BDT "+totalamt)
         }
       </script>

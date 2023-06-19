@@ -124,7 +124,7 @@
       </div>
     </form>
 <?php }?>
-<a class="btn btn-success" href="checkout.php">Checkout</a>
+    <a class="btn btn-success" href="checkout.php">Checkout</a>
 <?php } ?>
   </div>
 
