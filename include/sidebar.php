@@ -11,6 +11,20 @@
                <li class="nav-item">
                   <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <?php
+                     $data=$mysqli->common_select("category_tbl");
+                     if(!$data['error']){
+                        foreach($data['data'] as $d){
+                  ?>
+                     <a class="dropdown-item" href="category.php?id=<?= $d->id ?>"><?= $d->name ?></a>
+                  <?php } } ?>
+                  </div>
+               </li>
                
                <li class="nav-item">
                   <a class="nav-link" href="product.php">Products</a>

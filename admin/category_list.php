@@ -26,6 +26,7 @@
                                 <th class="table-primary"><?= $d->name ?></th>
                                 <th>
                                     <a href="category_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="category_delete.php?id=<?= $d->id ?>"><i class="fa fa-trash text-danger"></i></a>
 
                             </th>
                                

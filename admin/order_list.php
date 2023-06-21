@@ -11,38 +11,43 @@
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">Customer</th>
+                                <th scope="col">Phone</th>
                                 <th scope="col">Discount</th>
                                 <th scope="col">Shipping</th>
-                                <th scope="col">Grand_total</th>
+                                <th scope="col">Grand Total</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">City</th>
-                                <th scope="col">Postal</th>
                                 <th scope="col">Message</th>
-                                <th scope="col">Created_at</th>
+                                <th scope="col">Order Date</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
-                            $data=$mysqli->common_select('orders');
+                            $data=$mysqli->common_select_query("SELECT orders.*, customers.first_name,customers.last_name, customers.phone,
+                            shipping_city.city_name FROM `orders`
+                            join shipping_city on shipping_city.id=orders.city
+                            join customers on customers.id=orders.customer_id");
                             if(!$data['error']){
                                 foreach($data['data'] as $d){
                         ?>
                             <tr>
                                 
-                                <th class="table-info"><?= $d->customer_id ?></th>
+                                <th class="table-info"><?= $d->first_name ?> <?= $d->last_name ?></th>
+                                <th class="table-info"><?= $d->phone ?></th>
+                                
                                 <th class="table-danger"><?= $d->discount ?></th>
                                 <th class="table-warning"><?= $d->shipping ?></th>
                                 <th class="table-success"><?= $d->grand_total ?></th>
                                 <th class="table-info"><?= $d->address?></th>
-                                <th class="table-warning"><?= $d->city ?></th>
-                                <th class="table-danger"><?= $d->postal?></th>
+                                <th class="table-warning"><?= $d->city_name ?></th>
                                 <th class="table-info"><?= $d->message ?></th>
-                                <th class="table-success"><?= $d->created_at?></th>
+                                <th class="table-success"><?= $d->order_date?></th>
                                 <th class="table-primary"><?= $d->status?></th>
                                 <th>
                                     <a href="order_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="order_delete.php?id=<?= $d->id ?>"><i class="fa fa-trash text-danger"></i></a>
 
                             </th>
                                

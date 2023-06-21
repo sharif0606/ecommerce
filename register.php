@@ -48,14 +48,19 @@
                                         <input type="text" class="form-control" id="address" name="address"placeholder="Enter your address">
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-floating mb-3">
                                         <label for="email"><h5>Email address :</h5></label>
                                         <input type="email" class="form-control" name="email" placeholder="name@example.com">
                                     </div>
+                                <div class="col-sm-12">
+                                    <div class="form-floating mb-3">
+                                        <label for="phone"><h5>Phone Number:</h5></label>
+                                        <input type="number" class="form-control" name="phone" placeholder="+88-01234567890">
+                                    </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-floating mb-4">
+                                <div class="col-sm-12">
+                                    <div class="form-floating mb-3">
                                         <label for="password"><h5>Password :</h5></label>
                                         <input type="password" class="form-control" name="password" placeholder="Password">
                                     </div>
@@ -63,7 +68,7 @@
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                            <button type="submit" class="btn btn-success py-3 w-100 mb-4">Sign Up</button>
                             <p class="text-center mb-0">Already have an Account? <a href="login.php">Sign In</a></p>
                         </form>
                         <?php

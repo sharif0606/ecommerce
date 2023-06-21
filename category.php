@@ -3,13 +3,19 @@
       <div class="hero_area">
          <?php require_once('include/sidebar.php') ?>
       </div>
+      <?php
+         $cat['id']=$_GET['id'];
+               $data=$mysqli->common_select_single("category_tbl","*",$cat);
+            if(!$data['error']){
+               $d=$data['data'];
+          } ?>
       <!-- inner page section -->
       <section class="inner_page_head">
          <div class="container_fuild">
             <div class="row">
                <div class="col-md-12">
                   <div class="full">
-                     <h3 > Product Grid</h3>
+                     <h3 > <?= $d->name ?></h3>
                   </div>
                </div>
             </div>
@@ -19,14 +25,10 @@
       <!-- product section -->
       <section class="product_section layout_padding">
    <div class="container">
-      <div class="heading_container heading_center">
-         <h2>
-            Our <span>products</span>
-         </h2>
-      </div>
+      
       <div class="row">
       <?php
-         $data=$mysqli->common_select_query("SELECT * FROM `product_tbl` WHERE deleted_at is null");
+         $data=$mysqli->common_select_query("SELECT * FROM `product_tbl` WHERE category_id=".$_GET['id']." and deleted_at is null");
          if(!$data['error']){
             foreach($data['data'] as $d){
       ?>

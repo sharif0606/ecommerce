@@ -34,6 +34,10 @@
           <input type="email" class="form-control" id="email" value=" " readonly>
         </div>
         <div class="form-group">
+          <label for="email">Phone</label>
+          <input type="number" class="form-control" id="phone" value=" " readonly>
+        </div>
+        <div class="form-group">
           <label for="address">Address</label>
           <textarea class="form-control" id="address" rows="3" readonly> </textarea>
         </div>

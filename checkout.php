@@ -138,9 +138,9 @@
     $orders['grand_total']=$_POST['grand_total'];
     $orders['address']=$_POST['address'];
     $orders['city']=$_POST['city'];
-    $orders['postal']=$_POST['postal'];
+   
     $orders['message']=$_POST['message'];
-    $orders['created_at']=date("Y-m-d H:i:s");
+    $orders['order_date']=date("Y-m-d H:i:s");
     $ordersave=$mysqli->common_create('orders',$orders);
     if(!$custsave['error']){
       if($cart->total_items() > 0){ 

@@ -49,7 +49,9 @@
                                 <td class="table-primary"><?= $d->stock ?></td>
                                 <td>
                                     <a href="product_edit.php?id=<?= $d->id ?>">
-                                        <i class="fa fa-edit"></i> Edit
+                                        <i class="fa fa-edit"></i>
+                                    <a href="product_delete.php?id=<?= $d->id ?>">
+                                        <i class="fa fa-trash text-danger"></i>
                                     </a>
                                 </td>
                                

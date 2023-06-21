@@ -391,7 +391,7 @@
       </div>
       <div class="row">
       <?php
-         $data=$mysqli->common_select_query("SELECT * FROM `product_tbl` WHERE deleted_at is null");
+         $data=$mysqli->common_select_query("SELECT * FROM `product_tbl` WHERE deleted_at is null order by id desc limit 12");
          if(!$data['error']){
             foreach($data['data'] as $d){
       ?>

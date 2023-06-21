@@ -30,11 +30,11 @@
                   <th scope="col">Grand_total</th>
                   <th scope="col">Address</th>
                   <th scope="col">City</th>
-                  <th scope="col">Postal</th>
+          
                   <th scope="col">Message</th>
                   <th scope="col">Order Date</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Invoice</th>
                 </tr>
               </thead>
               <tbody>
@@ -49,6 +49,18 @@
                     <td>INV-<?= date("y") ?><?= str_pad($d->id, 5, "0", STR_PAD_LEFT); ?></td>
                     <td><?= $d->sub_total; ?></td>
                     <td><?= $d->discount; ?></td>
+                    <td><?= $d->shipping;?></td>
+                    <td><?= $d->grand_total;?></td>
+                    <td><?= $d->address;?></td>
+                    <td><?= $d->city;?></td>
+                    
+                    <td><?= $d->message;?></td>
+                    <td><?= $d->order_date;?></td>
+                    <td><?= $d->status;?></td>
+                    <td>
+                      <a href="invoice.php"><i class="fas fa-file-invoice"></i></a>
+                    </td>
+                   
                   </tr>
                 <?php  }  } ?>
               </tbody>
