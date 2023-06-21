@@ -16,7 +16,7 @@
       
       <div class="card">
         <div class="card-header">
-          <h2>Personal Information</h2>
+          <h2 class="text-center text-info">Personal Information</h2>
         </div>
         <div class="card-body">
           <b>Name: </b> <?= $_SESSION['user']->first_name ?> <?= $_SESSION['user']->last_name ?><br>

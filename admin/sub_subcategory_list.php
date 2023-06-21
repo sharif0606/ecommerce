@@ -10,7 +10,7 @@
                 <table class="table table-bordered table-hover">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">SL</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">Sub Category</th>
                                 <th scope="col">Sub Sub Category</th>
@@ -33,6 +33,7 @@
                                 <th class="table-primary"><?= $d->name ?></th>
                                 <th>
                                     <a href="sub_subcategory_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="sub_subcategory_delete.php?id=<?= $d->id ?>"><i class="fa fa-trash text-danger"></i></a>
 
                             </th>
                                

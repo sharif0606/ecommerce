@@ -10,9 +10,9 @@
     ?>
 <?php 
 $where['id']=$_GET['id'];
-$rs=$mysqli->common_delete("category_tbl",$where);
+$rs=$mysqli->common_delete("sub_subcategory",$where);
 if($rs){
-    header('location: category_list.php');
+    header('location:sub_subcategory_list.php');
 }else{
     echo $mysqli->error;
 }

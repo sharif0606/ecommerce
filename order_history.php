@@ -20,8 +20,8 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table">
-              <thead>
+            <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
                 <tr>
                   <th scope="col">Order Number</th>
                   <th scope="col">Sub Amount</th>
@@ -46,19 +46,19 @@
               
               ?>
                   <tr>
-                    <td>INV-<?= date("y") ?><?= str_pad($d->id, 5, "0", STR_PAD_LEFT); ?></td>
-                    <td><?= $d->sub_total; ?></td>
-                    <td><?= $d->discount; ?></td>
-                    <td><?= $d->shipping;?></td>
-                    <td><?= $d->grand_total;?></td>
-                    <td><?= $d->address;?></td>
-                    <td><?= $d->city;?></td>
+                    <td class="table-info">INV-<?= date("y") ?><?= str_pad($d->id, 5, "0", STR_PAD_LEFT); ?></td>
+                    <td class="table-primary"><?= $d->sub_total; ?></td>
+                    <td class="table-success"><?= $d->discount; ?></td>
+                    <td class="table-danger"><?= $d->shipping;?></td>
+                    <td class="table-warning"><?= $d->grand_total;?></td>
+                    <td class="table-info"><?= $d->address;?></td>
+                    <td class="table-success"><?= $d->city;?></td>
                     
-                    <td><?= $d->message;?></td>
-                    <td><?= $d->order_date;?></td>
-                    <td><?= $d->status;?></td>
-                    <td>
-                      <a href="invoice.php"><i class="fas fa-file-invoice"></i></a>
+                    <td class="table-success"><?= $d->message;?></td>
+                    <td class="table-danger"><?= $d->order_date;?></td>
+                    <td class="table-primary"><?= $d->status;?></td>
+                    <td class="">
+                    <a href="invoice.php?id=<?= $d->id ?>"><i class="fa regular fa-file-invoice">Invoice</i></a>
                     </td>
                    
                   </tr>

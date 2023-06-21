@@ -16,7 +16,7 @@
       
       <div class="card">
         <div class="card-header">
-          <h2>Wish-List</h2>
+          <h2 class="text-center text-success">Wish-List</h2>
         </div>
         <div class="card-body">
         <section class="product_section layout_padding pt-0">

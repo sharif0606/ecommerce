@@ -47,6 +47,7 @@
                                 <th class="table-primary"><?= $d->status?></th>
                                 <th>
                                     <a href="order_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="invoice.php?id=<?= $d->id ?>"><i class="fa regular fa-file-invoice"></i></a>
                                     <a href="order_delete.php?id=<?= $d->id ?>"><i class="fa fa-trash text-danger"></i></a>
 
                             </th>

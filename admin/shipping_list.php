@@ -28,6 +28,7 @@
                                 <th class="table-primary"><?= $d->shipping_charge ?></th>
                                 <th>
                                     <a href="shipping_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="shipping_edit.php?id=<?= $d->id ?>"><i class="fa fa-trash text-danger"></i></a>
 
                             </th>
                                
