@@ -138,7 +138,6 @@
     $orders['grand_total']=$_POST['grand_total'];
     $orders['address']=$_POST['address'];
     $orders['city']=$_POST['city'];
-   
     $orders['message']=$_POST['message'];
     $orders['order_date']=date("Y-m-d H:i:s");
     $ordersave=$mysqli->common_create('orders',$orders);

@@ -26,6 +26,10 @@
                             <option <?= $d->status=="Cancelled"?"selected":"" ?> value="Cancelled">Cancelled</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="delivery_date" class="form-label">Delivery Date</label>
+                        <input type="date" name="delivery_date" id="">
+                    </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
                 <?php
@@ -36,11 +40,17 @@
                             if(!$dataitm['error']){
                                 foreach($dataitm['data'] as $itm){
                                     $query=$mysqli->common_query("update product_tbl set stock=stock - ".$itm->quantity." where id='".$itm->product_id."' ");
-                                    
+                                }
+                            }
+                        }else{
+                            $whereitm['order_id']=$_GET['id'];
+                            $dataitm=$mysqli->common_select('order_items','*',$whereitm);
+                            if(!$dataitm['error']){
+                                foreach($dataitm['data'] as $itm){
+                                    $query=$mysqli->common_query("update product_tbl set stock=stock + ".$itm->quantity." where id='".$itm->product_id."' ");
                                 }
                             }
                         }
-                        $rs=$mysqli->common_update('orders',$_POST,$where);
                         $rs=$mysqli->common_update('orders',$_POST,$where);
                         if(!$rs['error']){
                         echo "<script>window.location='order_list.php'</script>";

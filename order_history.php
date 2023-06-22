@@ -53,12 +53,11 @@
                     <td class="table-warning"><?= $d->grand_total;?></td>
                     <td class="table-info"><?= $d->address;?></td>
                     <td class="table-success"><?= $d->city;?></td>
-                    
                     <td class="table-success"><?= $d->message;?></td>
                     <td class="table-danger"><?= $d->order_date;?></td>
                     <td class="table-primary"><?= $d->status;?></td>
                     <td class="">
-                    <a href="invoice.php?id=<?= $d->id ?>"><i class="fa regular fa-file-invoice">Invoice</i></a>
+                      <a href="invoice.php?id=<?= $d->id ?>"><i class="fa regular fa-file-invoice">Invoice</i></a>
                     </td>
                    
                   </tr>

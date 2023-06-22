@@ -1,7 +1,7 @@
 <?php
     $protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
-    $base_url="$protocol://".$_SERVER['SERVER_NAME']."/".explode('/',$_SERVER['SCRIPT_NAME'])[1]."/admin/";
-    require_once('../class/crud.php');
+    $base_url="$protocol://".$_SERVER['SERVER_NAME']."/".explode('/',$_SERVER['SCRIPT_NAME'])[1]."/";
+    require_once('class/crud.php');
     $mysqli=new crud;
 ?>
 <!DOCTYPE html>
@@ -13,109 +13,110 @@
     <!-- <link rel="stylesheet" href="style.css">  -->
     <style>
         h1,h2,h3,h4,h5,h6{
-            margin: 0;
-            padding: 0;
-        }
-        span{
-            color: #dee2e6;
-        }
-        p{
-            margin: 0;
-            padding: 0;
-        }
-        .container{
-            width: 80%;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        .brand-section{
-        background-color: #ec494f;
-        padding: 10px 40px;
-        }
-        .logo{
-            width: 50%;
-        }
+                margin: 0;
+                padding: 0;
+            }
+            span{
+                color: #dee2e6;
+            }
+            p{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .brand-section{
+            background-color: #ec494f;
+            padding: 10px 40px;
+            }
+            .logo{
+                width: 50%;
+            }
 
-        .row{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .col-6{
-            width: 50%;
-            flex: 0 0 auto;
-        }
-        
-        .text-white{
-            color: #fff;
-        }
-        .company-details{
-            float: right;
-            text-align: right;
-        }
-        .body-section{
-            padding: 16px;
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .col-6{
+                width: 50%;
+                flex: 0 0 auto;
+            }
+           
+            .text-white{
+                color: #fff;
+            }
+            .company-details{
+                float: right;
+                text-align: right;
+            }
+            .body-section{
+                padding: 16px;
+                
+            }
+            .heading{
+                font-size: 20px;
+                margin-bottom: 08px;
+                color:  #ec494f;
+            }
             
-        }
-        .heading{
-            font-size: 20px;
-            margin-bottom: 08px;
-            color:  #ec494f;
-        }
-        
-        .sub-heading{
-            color: #262626;
-            margin-bottom: 05px;
-        }
-        table{
-            background-color: #fff;
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table thead tr{
-            border: 1px solid #111;
-            background-color: #f2f2f2;
-        }
-        table td {
-            vertical-align: middle !important;
-        }
-        table th, table td {
-            padding-top: 08px;
-            padding-bottom: 08px;
-        }
-        .table-bordered{
-            box-shadow: 0px 0px 5px 0.5px gray;
-        }
+            .sub-heading{
+                color: #262626;
+                margin-bottom: 05px;
+            }
+            table{
+                background-color: #fff;
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table thead tr{
+                border: 1px solid #111;
+                background-color: #f2f2f2;
+            }
+            table td {
+                vertical-align: middle !important;
+            }
+            table th, table td {
+                padding-top: 08px;
+                padding-bottom: 08px;
+            }
+            .table-bordered{
+                box-shadow: 0px 0px 5px 0.5px gray;
+            }
 
-        .text-right{
-            text-align: end;
-        }
-        
-        .float-right{
-            float: right;
-        }
+            .text-right{
+                text-align: end;
+            }
+            
+            .float-right{
+                float: right;
+            }
 
-        th{
-            color: #5f5c5c;
-        }
+            th{
+                color: #5f5c5c;
+            }
 
-        .td{
-            color:  #5f5c5c;
-            text-align: right;
-        }
+            .td{
+                color:  #5f5c5c;
+                text-align: right;
+            }
 
-        button {
-            background-color:  #ec494f; /* Green */
-            border: none;
-            color: white;
-            padding: 7px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 10px;
-        }
-
+            button {
+                background-color:  #ec494f; /* Green */
+                border: none;
+                color: white;
+                padding: 7px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+ 
     </style>
+
 
 </head> 
     <body>
@@ -182,7 +183,7 @@
                 <div class="body-section">
                     <h3 class="heading">Ordered Items</h3>
                     <br>
-                    <table  border="1px">
+                    <table  border="1px  ">
                         <thead>
                             <tr>
                                 <th>Item</th>
@@ -253,5 +254,5 @@
             
         </fieldset>      
 
-    </body>
-</html>
+        </body>
+    </html>

@@ -43,7 +43,7 @@
                                 <th class="table-info"><?= $d->address?></th>
                                 <th class="table-warning"><?= $d->city_name ?></th>
                                 <th class="table-info"><?= $d->message ?></th>
-                                <th class="table-success"><?= $d->order_date?></th>
+                                <th class="table-success"><?= $d->order_date ?></th>
                                 <th class="table-primary"><?= $d->status?></th>
                                 <th>
                                     <a href="order_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
