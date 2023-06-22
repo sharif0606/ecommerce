@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 09:52 AM
+-- Generation Time: Jun 22, 2023 at 08:21 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -142,14 +142,6 @@ CREATE TABLE `customers` (
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`, `updated_at`, `status`, `deleted_at`) VALUES
-(1, 'Noman', 'Hossain', 'noman@gmail.com', NULL, 'adcd7048512e64b48da55b027577886ee5a36350', 'kasjdk', NULL, NULL, 1, NULL),
-(2, '', '', '', '+88 ', NULL, '', NULL, NULL, 1, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -166,20 +158,12 @@ CREATE TABLE `orders` (
   `coupon_code` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `city` int(11) DEFAULT NULL,
-  `postal` varchar(255) DEFAULT NULL,
   `message` text DEFAULT NULL,
-  `created_at` datetime NOT NULL,
+  `order_date` datetime NOT NULL,
+  `delivery_date` date DEFAULT NULL,
   `status` enum('Pending','Completed','Cancelled') NOT NULL DEFAULT 'Pending',
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `customer_id`, `sub_total`, `discount`, `shipping`, `grand_total`, `coupon_code`, `address`, `city`, `postal`, `message`, `created_at`, `status`, `deleted_at`) VALUES
-(1, 1, '0.00', '0.00', '0.00', 0.00, NULL, '', 0, '', '', '2023-06-19 07:13:48', 'Pending', NULL),
-(2, 1, '19500.00', '500.00', '200.00', 19200.00, '101', 'This is address', 1, '', 'asdf', '2023-06-19 08:48:52', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -195,16 +179,6 @@ CREATE TABLE `order_items` (
   `quantity` int(5) NOT NULL,
   `deleted_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `order_items`
---
-
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `price`, `quantity`, `deleted_at`) VALUES
-(1, 1, 9, '4500.00', 2, NULL),
-(2, 1, 1, '15000.00', 2, NULL),
-(3, 2, 17, '4500.00', 1, NULL),
-(4, 2, 1, '15000.00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -559,19 +533,19 @@ ALTER TABLE `coupon`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_tbl`
