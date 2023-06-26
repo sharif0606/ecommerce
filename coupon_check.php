@@ -1,5 +1,6 @@
 <?php
-  $base_url="http://localhost/ecommerce/";
+  $protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
+  $base_url="$protocol://".$_SERVER['SERVER_NAME']."/";
    session_start();
    require_once('class/crud.php');
    require_once('class/cart.php');

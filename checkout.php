@@ -123,9 +123,9 @@
               </div>
             </div>
 
-            <input type="text" name="discount" id="discount" value="0">
-            <input type="text" name="shipping" id="shipping" value="0">
-            <input type="text" name="grand_total" id="grand_total" value="0">
+            <input type="hidden" name="discount" id="discount" value="0">
+            <input type="hidden" name="shipping" id="shipping" value="0">
+            <input type="hidden" name="grand_total" id="grand_total" value="0">
           </div>
 </form>
 <?php
