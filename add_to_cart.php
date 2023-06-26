@@ -1,5 +1,6 @@
 <?php
-    $base_url="http://localhost/ecommerce/";
+   $protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
+   $base_url="$protocol://".$_SERVER['SERVER_NAME']."/";
     require_once('class/cart.php');
     $cart=new Cart;
     $itemData = array( 
